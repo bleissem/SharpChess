@@ -210,8 +210,8 @@ namespace SharpChess
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Move analysis will be recorded when the next move begins. WARNING: drastically sl" +
-        "ows computer thinking, and uses LOTS of memory!");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Move analysis will be recorded when the next move begins. Max depth 6. WARNING: d" +
+        "rastically slows computer thinking, and uses LOTS of memory!");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMoveAnalysis));
             this.tvwMoves = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
@@ -223,7 +223,8 @@ namespace SharpChess
             this.tvwMoves.Location = new System.Drawing.Point(0, 0);
             this.tvwMoves.Name = "tvwMoves";
             treeNode1.Name = "";
-            treeNode1.Text = "Move analysis will be recorded when the next move begins. Max depth 6. WARNING: drastically slows computer thinking, and uses LOTS of memory!";
+            treeNode1.Text = "Move analysis will be recorded when the next move begins. Max depth 6. WARNING: d" +
+    "rastically slows computer thinking, and uses LOTS of memory!";
             this.tvwMoves.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
             this.tvwMoves.Size = new System.Drawing.Size(475, 592);
@@ -234,7 +235,7 @@ namespace SharpChess
             // 
             // frmMoveAnalysis
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(8, 19);
             this.ClientSize = new System.Drawing.Size(475, 592);
             this.Controls.Add(this.tvwMoves);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

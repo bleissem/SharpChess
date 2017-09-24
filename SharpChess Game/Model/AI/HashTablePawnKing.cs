@@ -144,7 +144,7 @@ namespace SharpChess.Model.AI
         /// <returns>
         /// Pawn and king specific score for the specified position.
         /// </returns>
-        public static unsafe int ProbeHash(ulong hashCodeA, ulong hashCodeB, Player.PlayerColourNames colour)
+        public static int ProbeHash(ulong hashCodeA, ulong hashCodeB, Player.PlayerColourNames colour)
         {
             if (colour == Player.PlayerColourNames.Black)
             {
@@ -159,15 +159,17 @@ namespace SharpChess.Model.AI
 
             Probes++;
 
-            fixed (HashEntry* phashBase = &hashTableEntries[0])
+            uint phashBase = 0;
+            //fixed (HashEntry* phashBase = &hashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
+                //HashEntry* phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % hashTableSize);
 
-                if (phashEntry->HashCodeA == hashCodeA && phashEntry->HashCodeB == hashCodeB)
+                if (hashTableEntries[phashEntry].HashCodeA == hashCodeA && hashTableEntries[phashEntry].HashCodeB == hashCodeB)
                 {
                     Hits++;
-                    return phashEntry->Points;
+                    return hashTableEntries[phashEntry].Points;
                 }
             }
 
@@ -189,7 +191,7 @@ namespace SharpChess.Model.AI
         /// <param name="colour">
         /// Player colour.
         /// </param>
-        public static unsafe void RecordHash(ulong hashCodeA, ulong hashCodeB, int val, Player.PlayerColourNames colour)
+        public static void RecordHash(ulong hashCodeA, ulong hashCodeB, int val, Player.PlayerColourNames colour)
         {
             if (colour == Player.PlayerColourNames.Black)
             {
@@ -202,13 +204,15 @@ namespace SharpChess.Model.AI
                 hashCodeB &= 0xFFFFFFFFFFFFFFFE;
             }
 
-            fixed (HashEntry* phashBase = &hashTableEntries[0])
+            uint phashBase = 0;
+            // fixed (HashEntry* phashBase = &hashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
+                // HashEntry* phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % hashTableSize);
-                phashEntry->HashCodeA = hashCodeA;
-                phashEntry->HashCodeB = hashCodeB;
-                phashEntry->Points = val;
+                hashTableEntries[phashEntry].HashCodeA = hashCodeA;
+                hashTableEntries[phashEntry].HashCodeB = hashCodeB;
+                hashTableEntries[phashEntry].Points = val;
             }
 
             Writes++;

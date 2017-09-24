@@ -184,7 +184,7 @@ namespace SharpChess.Model.AI
         /// <returns>
         /// Best move, or null.
         /// </returns>
-        public static unsafe Move ProbeForBestMove(ulong hashCodeA, ulong hashCodeB, Player.PlayerColourNames colour)
+        public static Move ProbeForBestMove(ulong hashCodeA, ulong hashCodeB, Player.PlayerColourNames colour)
         {
             // Disable if this feature when switched off.
             if (!Game.EnableTranspositionTable)
@@ -192,15 +192,17 @@ namespace SharpChess.Model.AI
                 return null;
             }
 
+            uint phashBase = 0;
+            uint phashEntry = phashBase;
             // TODO Unit test Hash Table. What happens when same position stored at different depths in diffenent slots with the same hash?
-            fixed (HashEntry* phashBase = &hashTableEntries[0])
+            // fixed (HashEntry* phashBase = &hashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                // HashEntry* phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % hashTableSize);
 
                 int intAttempt = 0;
                 while (phashEntry >= phashBase
-                       && (phashEntry->HashCodeA != hashCodeA || phashEntry->HashCodeB != hashCodeB))
+                       && (hashTableEntries[phashEntry].HashCodeA != hashCodeA || hashTableEntries[phashEntry].HashCodeB != hashCodeB))
                 {
                     phashEntry--;
                     intAttempt++;
@@ -215,38 +217,38 @@ namespace SharpChess.Model.AI
                     phashEntry = phashBase;
                 }
 
-                if (phashEntry->HashCodeA == hashCodeA && phashEntry->HashCodeB == hashCodeB)
+                if (hashTableEntries[phashEntry].HashCodeA == hashCodeA && hashTableEntries[phashEntry].HashCodeB == hashCodeB)
                 {
                     if (colour == Player.PlayerColourNames.White)
                     {
-                        if (phashEntry->WhiteFrom >= 0)
+                        if (hashTableEntries[phashEntry].WhiteFrom >= 0)
                         {
                             return new Move(
                                 0, 
-                                0, 
-                                phashEntry->WhiteMoveName, 
-                                Board.GetPiece(phashEntry->WhiteFrom), 
-                                Board.GetSquare(phashEntry->WhiteFrom), 
-                                Board.GetSquare(phashEntry->WhiteTo), 
-                                Board.GetSquare(phashEntry->WhiteTo).Piece, 
-                                0, 
-                                phashEntry->Result);
+                                0,
+                                hashTableEntries[phashEntry].WhiteMoveName, 
+                                Board.GetPiece(hashTableEntries[phashEntry].WhiteFrom), 
+                                Board.GetSquare(hashTableEntries[phashEntry].WhiteFrom), 
+                                Board.GetSquare(hashTableEntries[phashEntry].WhiteTo), 
+                                Board.GetSquare(hashTableEntries[phashEntry].WhiteTo).Piece, 
+                                0,
+                                hashTableEntries[phashEntry].Result);
                         }
                     }
                     else
                     {
-                        if (phashEntry->BlackFrom >= 0)
+                        if (hashTableEntries[phashEntry].BlackFrom >= 0)
                         {
                             return new Move(
                                 0, 
-                                0, 
-                                phashEntry->BlackMoveName, 
-                                Board.GetPiece(phashEntry->BlackFrom), 
-                                Board.GetSquare(phashEntry->BlackFrom), 
-                                Board.GetSquare(phashEntry->BlackTo), 
-                                Board.GetSquare(phashEntry->BlackTo).Piece, 
-                                0, 
-                                phashEntry->Result);
+                                0,
+                                hashTableEntries[phashEntry].BlackMoveName, 
+                                Board.GetPiece(hashTableEntries[phashEntry].BlackFrom), 
+                                Board.GetSquare(hashTableEntries[phashEntry].BlackFrom), 
+                                Board.GetSquare(hashTableEntries[phashEntry].BlackTo), 
+                                Board.GetSquare(hashTableEntries[phashEntry].BlackTo).Piece, 
+                                0,
+                                hashTableEntries[phashEntry].Result);
                         }
                     }
                 }
@@ -279,7 +281,7 @@ namespace SharpChess.Model.AI
         /// <returns>
         /// The positional score.
         /// </returns>
-        public static unsafe int ProbeForScore(
+        public static int ProbeForScore(
             ulong hashCodeA, ulong hashCodeB, int depth, int alpha, int beta, Player.PlayerColourNames colour)
         {
             // Disable if this feature when switched off.
@@ -289,17 +291,18 @@ namespace SharpChess.Model.AI
             }
 
             Probes++;
-
-            fixed (HashEntry* phashBase = &hashTableEntries[0])
+            uint phashBase = 0;
+            // fixed (HashEntry* phashBase = &hashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                //HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % hashTableSize);
 
                 int intAttempt = 0;
                 while (phashEntry >= phashBase
                        &&
-                       (phashEntry->HashCodeA != hashCodeA || phashEntry->HashCodeB != hashCodeB
-                        || phashEntry->Depth < depth))
+                       (hashTableEntries[phashEntry].HashCodeA != hashCodeA || hashTableEntries[phashEntry].HashCodeB != hashCodeB
+                        || hashTableEntries[phashEntry].Depth < depth))
                 {
                     phashEntry--;
                     intAttempt++;
@@ -314,24 +317,24 @@ namespace SharpChess.Model.AI
                     phashEntry = phashBase;
                 }
 
-                if (phashEntry->HashCodeA == hashCodeA && phashEntry->HashCodeB == hashCodeB
-                    && phashEntry->Depth >= depth)
+                if (hashTableEntries[phashEntry].HashCodeA == hashCodeA && hashTableEntries[phashEntry].HashCodeB == hashCodeB
+                    && hashTableEntries[phashEntry].Depth >= depth)
                 {
-                    if (phashEntry->Colour == colour)
+                    if (hashTableEntries[phashEntry].Colour == colour)
                     {
-                        if (phashEntry->Type == HashTypeNames.Exact)
+                        if (hashTableEntries[phashEntry].Type == HashTypeNames.Exact)
                         {
                             Hits++;
-                            return phashEntry->Result;
+                            return hashTableEntries[phashEntry].Result;
                         }
 
-                        if ((phashEntry->Type == HashTypeNames.Alpha) && (phashEntry->Result <= alpha))
+                        if ((hashTableEntries[phashEntry].Type == HashTypeNames.Alpha) && (hashTableEntries[phashEntry].Result <= alpha))
                         {
                             Hits++;
                             return alpha;
                         }
 
-                        if ((phashEntry->Type == HashTypeNames.Beta) && (phashEntry->Result >= beta))
+                        if ((hashTableEntries[phashEntry].Type == HashTypeNames.Beta) && (hashTableEntries[phashEntry].Result >= beta))
                         {
                             Hits++;
                             return beta;
@@ -373,7 +376,7 @@ namespace SharpChess.Model.AI
         /// <param name="colour">
         /// The player colour.
         /// </param>
-        public static unsafe void RecordHash(
+        public static void RecordHash(
             ulong hashCodeA, 
             ulong hashCodeB, 
             int depth, 
@@ -385,13 +388,16 @@ namespace SharpChess.Model.AI
             Player.PlayerColourNames colour)
         {
             Writes++;
-            fixed (HashEntry* phashBase = &hashTableEntries[0])
+            uint phashBase = 0;
+
+            // fixed (HashEntry* phashBase = &hashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                // HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % hashTableSize);
 
                 int intAttempt = 0;
-                while (phashEntry >= phashBase && phashEntry->HashCodeA != 0 && phashEntry->Depth > depth)
+                while (phashEntry >= phashBase && hashTableEntries[phashEntry].HashCodeA != 0 && hashTableEntries[phashEntry].Depth > depth)
                 {
                     phashEntry--;
                     intAttempt++;
@@ -406,36 +412,36 @@ namespace SharpChess.Model.AI
                     phashEntry = phashBase;
                 }
 
-                if (phashEntry->HashCodeA != 0)
+                if (hashTableEntries[phashEntry].HashCodeA != 0)
                 {
                     Collisions++;
-                    if (phashEntry->HashCodeA != hashCodeA || phashEntry->HashCodeB != hashCodeB)
+                    if (hashTableEntries[phashEntry].HashCodeA != hashCodeA || hashTableEntries[phashEntry].HashCodeB != hashCodeB)
                     {
                         Overwrites++;
-                        phashEntry->WhiteFrom = -1;
-                        phashEntry->BlackFrom = -1;
+                        hashTableEntries[phashEntry].WhiteFrom = -1;
+                        hashTableEntries[phashEntry].BlackFrom = -1;
                     }
                 }
 
-                phashEntry->HashCodeA = hashCodeA;
-                phashEntry->HashCodeB = hashCodeB;
-                phashEntry->Result = val;
-                phashEntry->Type = type;
-                phashEntry->Depth = (sbyte)depth;
-                phashEntry->Colour = colour;
+                hashTableEntries[phashEntry].HashCodeA = hashCodeA;
+                hashTableEntries[phashEntry].HashCodeB = hashCodeB;
+                hashTableEntries[phashEntry].Result = val;
+                hashTableEntries[phashEntry].Type = type;
+                hashTableEntries[phashEntry].Depth = (sbyte)depth;
+                hashTableEntries[phashEntry].Colour = colour;
                 if (from > -1)
                 {
                     if (colour == Player.PlayerColourNames.White)
                     {
-                        phashEntry->WhiteMoveName = moveName;
-                        phashEntry->WhiteFrom = (sbyte)from;
-                        phashEntry->WhiteTo = (sbyte)to;
+                        hashTableEntries[phashEntry].WhiteMoveName = moveName;
+                        hashTableEntries[phashEntry].WhiteFrom = (sbyte)from;
+                        hashTableEntries[phashEntry].WhiteTo = (sbyte)to;
                     }
                     else
                     {
-                        phashEntry->BlackMoveName = moveName;
-                        phashEntry->BlackFrom = (sbyte)from;
-                        phashEntry->BlackTo = (sbyte)to;
+                        hashTableEntries[phashEntry].BlackMoveName = moveName;
+                        hashTableEntries[phashEntry].BlackFrom = (sbyte)from;
+                        hashTableEntries[phashEntry].BlackTo = (sbyte)to;
                     }
                 }
             }

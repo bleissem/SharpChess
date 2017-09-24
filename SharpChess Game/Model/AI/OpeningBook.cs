@@ -149,7 +149,7 @@ namespace SharpChess.Model.AI
         /// <returns>
         /// The best move in the opening book (hash table) or null if there is no opening book entry for the specified board position.
         /// </returns>
-        private static unsafe Move ProbeForBestMove(ulong hashCodeA, ulong hashCodeB, Player.PlayerColourNames colour)
+        private static Move ProbeForBestMove(ulong hashCodeA, ulong hashCodeB, Player.PlayerColourNames colour)
         {
             if (colour == Player.PlayerColourNames.Black)
             {
@@ -162,14 +162,16 @@ namespace SharpChess.Model.AI
                 hashCodeB &= 0xFFFFFFFFFFFFFFFE;
             }
 
-            fixed (HashEntry* phashBase = &HashTableEntries[0])
+            uint phashBase = 0;
+            // fixed (HashEntry* phashBase = &HashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
+                // HashEntry* phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % HashTableSize);
 
-                if (phashEntry->HashCodeA == hashCodeA && phashEntry->HashCodeB == hashCodeB)
+                if (HashTableEntries[phashEntry].HashCodeA == hashCodeA && HashTableEntries[phashEntry].HashCodeB == hashCodeB)
                 {
-                    return new Move(0, 0, phashEntry->MoveName, Board.GetPiece(phashEntry->From), Board.GetSquare(phashEntry->From), Board.GetSquare(phashEntry->To), null, 0, 0);
+                    return new Move(0, 0, HashTableEntries[phashEntry].MoveName, Board.GetPiece(HashTableEntries[phashEntry].From), Board.GetSquare(HashTableEntries[phashEntry].From), Board.GetSquare(HashTableEntries[phashEntry].To), null, 0, 0);
                 }
             }
 
@@ -197,7 +199,7 @@ namespace SharpChess.Model.AI
         /// <param name="colour">
         /// The player colour.
         /// </param>
-        private static unsafe void RecordHash(ulong hashCodeA, ulong hashCodeB, byte from, byte to, Move.MoveNames moveName, Player.PlayerColourNames colour)
+        private static void RecordHash(ulong hashCodeA, ulong hashCodeB, byte from, byte to, Move.MoveNames moveName, Player.PlayerColourNames colour)
         {
             if (colour == Player.PlayerColourNames.Black)
             {
@@ -210,16 +212,18 @@ namespace SharpChess.Model.AI
                 hashCodeB &= 0xFFFFFFFFFFFFFFFE;
             }
 
-            fixed (HashEntry* phashBase = &HashTableEntries[0])
+            uint phashBase = 0;
+            //fixed (HashEntry* phashBase = &HashTableEntries[0])
             {
-                HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
+                //HashEntry* phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % HashTableSize);
 
-                phashEntry->HashCodeA = hashCodeA;
-                phashEntry->HashCodeB = hashCodeB;
-                phashEntry->From = from;
-                phashEntry->To = to;
-                phashEntry->MoveName = moveName;
+                HashTableEntries[phashEntry].HashCodeA = hashCodeA;
+                HashTableEntries[phashEntry].HashCodeB = hashCodeB;
+                HashTableEntries[phashEntry].From = from;
+                HashTableEntries[phashEntry].To = to;
+                HashTableEntries[phashEntry].MoveName = moveName;
             }
         }
 

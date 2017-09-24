@@ -141,17 +141,17 @@ namespace SharpChess
         /// </summary>
         private void InitializeComponent()
         {
-            System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frmWinBoard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWinBoard));
             this.lvwWinBoard = new System.Windows.Forms.ListView();
-            this.colDirection = new System.Windows.Forms.ColumnHeader();
-            this.colMessage = new System.Windows.Forms.ColumnHeader();
+            this.colDirection = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvwWinBoard
             // 
             this.lvwWinBoard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-																						  this.colDirection,
-																						  this.colMessage});
+            this.colDirection,
+            this.colMessage});
             this.lvwWinBoard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvwWinBoard.FullRowSelect = true;
             this.lvwWinBoard.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -159,6 +159,7 @@ namespace SharpChess
             this.lvwWinBoard.Name = "lvwWinBoard";
             this.lvwWinBoard.Size = new System.Drawing.Size(248, 262);
             this.lvwWinBoard.TabIndex = 143;
+            this.lvwWinBoard.UseCompatibleStateImageBehavior = false;
             this.lvwWinBoard.View = System.Windows.Forms.View.Details;
             // 
             // colDirection
@@ -173,7 +174,7 @@ namespace SharpChess
             // 
             // frmWinBoard
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(8, 19);
             this.ClientSize = new System.Drawing.Size(248, 262);
             this.Controls.Add(this.lvwWinBoard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -182,6 +183,7 @@ namespace SharpChess
             this.Text = "WinBoard Message Log";
             this.Closing += new System.ComponentModel.CancelEventHandler(this.frmWinBoard_Closing);
             this.ResumeLayout(false);
+
         }
 
         /// <summary>

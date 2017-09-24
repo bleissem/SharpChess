@@ -26,43 +26,13 @@
         </member>
         <member name="M:SharpChess.Model.AI.Brain.#ctor(SharpChess.Model.Player)">
             <summary>
-              Initializes a new instance of the <see cref="T:SharpChess.Model.AI.Brain"/> class.
+              Initializes a new instance of the <see cref="T:SharpChess.Model.AI.Brain" /> class.
             </summary>
             <param name="player"> The player. </param>
         </member>
-        <member name="M:SharpChess.Model.AI.Brain.AbortThinking">
+        <member name="T:SharpChess.Model.AI.Brain.BrainEvent">
             <summary>
-              The abort thinking.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.AI.Brain.ForceImmediateMove">
-            <summary>
-              The force immediate move.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.AI.Brain.StartPondering">
-            <summary>
-              The start pondering.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.AI.Brain.StartThinking">
-            <summary>
-              The start thinking.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.AI.Brain.StopPondering">
-            <summary>
-              The stop pondering.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.AI.Brain.Think">
-            <summary>
-              Instruct the computer to think and make its next move.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.AI.Brain.SearchMoveConsideredHandler">
-            <summary>
-              The search move considered handler.
+              The delegatetype Brain event.
             </summary>
         </member>
         <member name="E:SharpChess.Model.AI.Brain.MoveConsideredEvent">
@@ -135,9 +105,39 @@
               Gets or sets ThinkingMaxAllowed
             </summary>
         </member>
-        <member name="T:SharpChess.Model.AI.Brain.BrainEvent">
+        <member name="M:SharpChess.Model.AI.Brain.AbortThinking">
             <summary>
-              The delegatetype Brain event.
+              The abort thinking.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.AI.Brain.ForceImmediateMove">
+            <summary>
+              The force immediate move.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.AI.Brain.StartPondering">
+            <summary>
+              The start pondering.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.AI.Brain.StartThinking">
+            <summary>
+              The start thinking.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.AI.Brain.StopPondering">
+            <summary>
+              The stop pondering.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.AI.Brain.Think">
+            <summary>
+              Instruct the computer to think and make its next move.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.AI.Brain.SearchMoveConsideredHandler">
+            <summary>
+              The search move considered handler.
             </summary>
         </member>
         <member name="T:SharpChess.Model.AI.ForceImmediateMoveException">
@@ -169,6 +169,56 @@
         <member name="F:SharpChess.Model.AI.HashTable.hashTableSize">
             <summary>
               Size of the HashTable.
+            </summary>
+        </member>
+        <member name="T:SharpChess.Model.AI.HashTable.HashTypeNames">
+            <summary>
+            Type of HashTable entry.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.AI.HashTable.HashTypeNames.Exact">
+            <summary>
+              Exact value.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.AI.HashTable.HashTypeNames.Alpha">
+            <summary>
+              Alpha value.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.AI.HashTable.HashTypeNames.Beta">
+            <summary>
+              Beta value.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTable.Collisions">
+            <summary>
+              Gets the number of hash table Collisions that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTable.Hits">
+            <summary>
+              Gets the number of hash table Hits that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTable.Overwrites">
+            <summary>
+              Gets the number of hash table Overwrites that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTable.Probes">
+            <summary>
+              Gets the number of hash table Probes that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTable.SlotsUsed">
+            <summary>
+              Gets the number of hash table slots used.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTable.Writes">
+            <summary>
+              Gets the number of hash table Writes that have occured.
             </summary>
         </member>
         <member name="M:SharpChess.Model.AI.HashTable.Clear">
@@ -261,56 +311,6 @@
             Reset hash table stats.
             </summary>
         </member>
-        <member name="P:SharpChess.Model.AI.HashTable.Collisions">
-            <summary>
-              Gets the number of hash table Collisions that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTable.Hits">
-            <summary>
-              Gets the number of hash table Hits that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTable.Overwrites">
-            <summary>
-              Gets the number of hash table Overwrites that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTable.Probes">
-            <summary>
-              Gets the number of hash table Probes that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTable.SlotsUsed">
-            <summary>
-              Gets the number of hash table slots used.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTable.Writes">
-            <summary>
-              Gets the number of hash table Writes that have occured.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.AI.HashTable.HashTypeNames">
-            <summary>
-            Type of HashTable entry.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.AI.HashTable.HashTypeNames.Exact">
-            <summary>
-              Exact value.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.AI.HashTable.HashTypeNames.Alpha">
-            <summary>
-              Alpha value.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.AI.HashTable.HashTypeNames.Beta">
-            <summary>
-              Beta value.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.AI.HashTable.HashEntry">
             <summary>
             The hash table entry.
@@ -391,6 +391,26 @@
             The m_arr hash entry.
             </summary>
         </member>
+        <member name="P:SharpChess.Model.AI.HashTableCheck.Hits">
+            <summary>
+              Gets the number of hash table Hits that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTableCheck.Overwrites">
+            <summary>
+              Gets the number of hash table Overwrites that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTableCheck.Probes">
+            <summary>
+              Gets the number of hash table Probes that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTableCheck.Writes">
+            <summary>
+              Gets the number of hash table Writes that have occured.
+            </summary>
+        </member>
         <member name="M:SharpChess.Model.AI.HashTableCheck.Clear">
             <summary>
             Clears all entries in the hash table.
@@ -421,26 +441,6 @@
         <member name="M:SharpChess.Model.AI.HashTableCheck.ResetStats">
             <summary>
             The reset stats.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTableCheck.Hits">
-            <summary>
-              Gets the number of hash table Hits that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTableCheck.Overwrites">
-            <summary>
-              Gets the number of hash table Overwrites that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTableCheck.Probes">
-            <summary>
-              Gets the number of hash table Probes that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTableCheck.Writes">
-            <summary>
-              Gets the number of hash table Writes that have occured.
             </summary>
         </member>
         <member name="T:SharpChess.Model.AI.HashTableCheck.HashEntry">
@@ -483,6 +483,36 @@
         <member name="F:SharpChess.Model.AI.HashTablePawn.hashTableSize">
             <summary>
               Size of the HashTable.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTablePawn.Collisions">
+            <summary>
+              Gets the number of hash table Collisions that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTablePawn.Hits">
+            <summary>
+              Gets the number of hash table Hits that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTablePawn.Overwrites">
+            <summary>
+              Gets the number of hash table Overwrites that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTablePawn.Probes">
+            <summary>
+              Gets the number of hash table Probes that have occured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTablePawn.SlotsUsed">
+            <summary>
+              Gets the number of hash table slots used.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.HashTablePawn.Writes">
+            <summary>
+              Gets the number of hash table Writes that have occured.
             </summary>
         </member>
         <member name="M:SharpChess.Model.AI.HashTablePawn.Clear">
@@ -532,36 +562,6 @@
         <member name="M:SharpChess.Model.AI.HashTablePawn.ResetStats">
             <summary>
             Reset all hash table stats.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTablePawn.Collisions">
-            <summary>
-              Gets the number of hash table Collisions that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTablePawn.Hits">
-            <summary>
-              Gets the number of hash table Hits that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTablePawn.Overwrites">
-            <summary>
-              Gets the number of hash table Overwrites that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTablePawn.Probes">
-            <summary>
-              Gets the number of hash table Probes that have occured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTablePawn.SlotsUsed">
-            <summary>
-              Gets the number of hash table slots used.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.HashTablePawn.Writes">
-            <summary>
-              Gets the number of hash table Writes that have occured.
             </summary>
         </member>
         <member name="T:SharpChess.Model.AI.HashTablePawn.HashEntry">
@@ -657,7 +657,7 @@
         </member>
         <member name="M:SharpChess.Model.AI.KillerMoves.#cctor">
             <summary>
-              Initializes static members of the <see cref="T:SharpChess.Model.AI.KillerMoves"/> class.
+              Initializes static members of the <see cref = "T:SharpChess.Model.AI.KillerMoves" /> class.
             </summary>
         </member>
         <member name="M:SharpChess.Model.AI.KillerMoves.Clear">
@@ -723,7 +723,7 @@
         <member name="T:SharpChess.Model.AI.OpeningBook">
             <summary>
             Tournament standard opening book when the best possible move is always selected for the current board position.
-             XML opening book files are created from PGN files using the <see cref="T:SharpChess.Model.PGNtoXML"/> class.
+             XML opening book files are created from PGN files using the <see cref = "T:SharpChess.Model.PGNtoXML" /> class.
             </summary>
         </member>
         <member name="F:SharpChess.Model.AI.OpeningBook.HashTableSize">
@@ -863,7 +863,7 @@
         <member name="T:SharpChess.Model.AI.OpeningBookSimple">
             <summary>
             A small, in-memory, book of opening moves, used simply to vary SharpChess's games against human players. Not competition standard by any means!
-              XML opening book files are created from PGN files using the <see cref="T:SharpChess.Model.PGNtoXML"/> class.
+              XML opening book files are created from PGN files using the <see cref = "T:SharpChess.Model.PGNtoXML" /> class.
             </summary>
         </member>
         <member name="F:SharpChess.Model.AI.OpeningBookSimple.HashtableBlack">
@@ -968,9 +968,94 @@
         </member>
         <member name="M:SharpChess.Model.AI.Search.#ctor(SharpChess.Model.AI.Brain)">
             <summary>
-              Initializes a new instance of the <see cref="T:SharpChess.Model.AI.Search"/> class.
+              Initializes a new instance of the <see cref="T:SharpChess.Model.AI.Search" /> class.
             </summary>
             <param name="brain"> The brain performing this search. </param>
+        </member>
+        <member name="T:SharpChess.Model.AI.Search.SearchEventDelegate">
+            <summary>
+              The delegatetype Search event.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.AI.Search.SearchMoveConsideredEvent">
+            <summary>
+              The move considered.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.CurrentMoveSearched">
+            <summary>
+              Gets CurrentMoveSearched.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.Evaluations">
+            <summary>
+              Gets or sets Evaluations.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.EvaluationsPerSecond">
+            <summary>
+              Gets EvaluationsPerSecond.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.MaxExtensions">
+            <summary>
+              Gets MaxExtensions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.MaxQuiesenceDepthReached">
+            <summary>
+              Gets MaxQuiesDepth.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.MaxSearchDepth">
+            <summary>
+              Gets MaxSearchDepth.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.MaxSearchTimeAllowed">
+            <summary>
+              Gets the maximum search time allowed.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.MyBrain">
+            <summary>
+              Gets the player's brain performing this search.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.PositionsPerSecond">
+            <summary>
+              Gets PositionsPerSecond.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.PositionsSearchedThisIteration">
+            <summary>
+              Gets the number of positions searched this iteration.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.PositionsSearchedThisTurn">
+            <summary>
+              Gets the number of positions searched this turn.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.SearchDepth">
+            <summary>
+              Gets the current search depth.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.SearchPositionNo">
+            <summary>
+              Gets the current search position number.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.TotalPositionsToSearch">
+            <summary>
+              Gets the total positions to search.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.AI.Search.LastPrincipalVariation">
+            <summary>
+              Gets or sets the Principal Variation from the previous iteration.
+            </summary>
         </member>
         <member name="M:SharpChess.Model.AI.Search.IterativeDeepeningSearch(SharpChess.Model.Player,SharpChess.Model.Moves,System.TimeSpan,System.TimeSpan)">
             <summary>
@@ -1110,91 +1195,6 @@
             <param name="moveKillerB2"> Second best killer move from previous ply. </param>
             <param name="player"> The player. </param>
         </member>
-        <member name="E:SharpChess.Model.AI.Search.SearchMoveConsideredEvent">
-            <summary>
-              The move considered.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.CurrentMoveSearched">
-            <summary>
-              Gets CurrentMoveSearched.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.Evaluations">
-            <summary>
-              Gets or sets Evaluations.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.EvaluationsPerSecond">
-            <summary>
-              Gets EvaluationsPerSecond.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.MaxExtensions">
-            <summary>
-              Gets MaxExtensions.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.MaxQuiesenceDepthReached">
-            <summary>
-              Gets MaxQuiesDepth.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.MaxSearchDepth">
-            <summary>
-              Gets MaxSearchDepth.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.MaxSearchTimeAllowed">
-            <summary>
-              Gets the maximum search time allowed.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.MyBrain">
-            <summary>
-              Gets the player's brain performing this search.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.PositionsPerSecond">
-            <summary>
-              Gets PositionsPerSecond.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.PositionsSearchedThisIteration">
-            <summary>
-              Gets the number of positions searched this iteration.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.PositionsSearchedThisTurn">
-            <summary>
-              Gets the number of positions searched this turn.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.SearchDepth">
-            <summary>
-              Gets the current search depth.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.SearchPositionNo">
-            <summary>
-              Gets the current search position number.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.TotalPositionsToSearch">
-            <summary>
-              Gets the total positions to search.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.AI.Search.LastPrincipalVariation">
-            <summary>
-              Gets or sets the Principal Variation from the previous iteration.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.AI.Search.SearchEventDelegate">
-            <summary>
-              The delegatetype Search event.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.Board">
             <summary>
             Represents the chess board using a 0x88 represenation.
@@ -1233,7 +1233,52 @@
         </member>
         <member name="M:SharpChess.Model.Board.#cctor">
             <summary>
-              Initializes static members of the <see cref="T:SharpChess.Model.Board"/> class.
+              Initializes static members of the <see cref = "T:SharpChess.Model.Board" /> class.
+            </summary>
+        </member>
+        <member name="T:SharpChess.Model.Board.OrientationNames">
+            <summary>
+            Valid values for orientation of the board. Black or White at the bottom.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Board.OrientationNames.White">
+            <summary>
+              White at the bottom.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Board.OrientationNames.Black">
+            <summary>
+              Black at the bottom.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Board.DebugString">
+            <summary>
+              Gets DebugString.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Board.HashCodeA">
+            <summary>
+              Gets or sets the hash code a.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Board.HashCodeB">
+            <summary>
+              Gets or sets the hash code b.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Board.Orientation">
+            <summary>
+              Gets or sets Orientation.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Board.PawnHashCodeA">
+            <summary>
+              Gets or sets the pawn hash code a.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Board.PawnHashCodeB">
+            <summary>
+              Gets or sets the pawn hash code b.
             </summary>
         </member>
         <member name="M:SharpChess.Model.Board.AppendPiecePath(SharpChess.Model.Moves,SharpChess.Model.Piece,SharpChess.Model.Player,System.Int32,SharpChess.Model.Moves.MoveListNames)">
@@ -1406,54 +1451,14 @@
             Ordinal value from file and rank.
             </returns>
         </member>
-        <member name="P:SharpChess.Model.Board.DebugString">
-            <summary>
-              Gets DebugString.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Board.HashCodeA">
-            <summary>
-              Gets or sets the hash code a.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Board.HashCodeB">
-            <summary>
-              Gets or sets the hash code b.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Board.Orientation">
-            <summary>
-              Gets or sets Orientation.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Board.PawnHashCodeA">
-            <summary>
-              Gets or sets the pawn hash code a.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Board.PawnHashCodeB">
-            <summary>
-              Gets or sets the pawn hash code b.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.Board.OrientationNames">
-            <summary>
-            Valid values for orientation of the board. Black or White at the bottom.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Board.OrientationNames.White">
-            <summary>
-              White at the bottom.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Board.OrientationNames.Black">
-            <summary>
-              Black at the bottom.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.BoardDebug">
             <summary>
             Helper methods for debuging board positions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.BoardDebug.DebugString">
+            <summary>
+              Gets a Debug String representing the currnet board position.
             </summary>
         </member>
         <member name="M:SharpChess.Model.BoardDebug.DebugDisplay">
@@ -1489,15 +1494,15 @@
             Board position string.
             </returns>
         </member>
-        <member name="P:SharpChess.Model.BoardDebug.DebugString">
-            <summary>
-              Gets a Debug String representing the currnet board position.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.Fen">
             <summary>
             Converts a Forsyth–Edwards Notation (FEN) string into a SharpChess board position.
             http://chessprogramming.wikispaces.com/Forsyth-Edwards+Notation
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Fen.GameStartPosition">
+            <summary>
+              Gets GameStartPosition.
             </summary>
         </member>
         <member name="M:SharpChess.Model.Fen.GetBoardPosition">
@@ -1796,11 +1801,6 @@
             Raised when unable to place piece.
             </exception>
         </member>
-        <member name="P:SharpChess.Model.Fen.GameStartPosition">
-            <summary>
-              Gets GameStartPosition.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.Fen.ValidationException">
             <summary>
             The validation exception.
@@ -1836,7 +1836,267 @@
         </member>
         <member name="M:SharpChess.Model.Game.#cctor">
             <summary>
-              Initializes static members of the <see cref="T:SharpChess.Model.Game"/> class.
+              Initializes static members of the <see cref="T:SharpChess.Model.Game" /> class.
+            </summary>
+        </member>
+        <member name="T:SharpChess.Model.Game.GameEvent">
+            <summary>
+              The game event type, raised to the UI when significant game events occur.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.Game.BoardPositionChanged">
+            <summary>
+              Raised when the board position changes.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.Game.GamePaused">
+            <summary>
+              Raised when the game is paused.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.Game.GameResumed">
+            <summary>
+              Raised when the game is resumed.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.Game.GameSaved">
+            <summary>
+              Riased when the game is saved.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.Game.SettingsUpdated">
+            <summary>
+              Raised when settings are updated.
+            </summary>
+        </member>
+        <member name="T:SharpChess.Model.Game.GameStageNames">
+            <summary>
+              Game stages.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Game.GameStageNames.Opening">
+            <summary>
+              The opening.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Game.GameStageNames.Middle">
+            <summary>
+              The middle.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Game.GameStageNames.End">
+            <summary>
+              The end.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.AvailableMegaBytes">
+            <summary>
+              Gets the available MegaBytes of free computer memory.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.BackupGamePath">
+            <summary>
+              Gets or sets the Backup Game Path.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.CaptureMoveAnalysisData">
+            <summary>
+              Gets or sets a value indicating whether CaptureMoveAnalysisData.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.ClockFixedTimePerMove">
+            <summary>
+              Gets or sets the Clock Fixed Time Per Move.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.ClockIncrementPerMove">
+            <summary>
+              Gets or sets the Clock Increment Per Move.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.ClockMaxMoves">
+            <summary>
+              Gets or sets the max number of moves on the clock. e.g. 60 moves in 30 minutes
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.ClockTime">
+            <summary>
+              Gets or sets the Clock Time.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.DifficultyLevel">
+            <summary>
+              Gets or sets game Difficulty Level.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EditModeActive">
+            <summary>
+              Gets a value indicating whether Edit Mode is Active.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableAspiration">
+            <summary>
+              Gets or sets a value indicating whether to use Aspiration Search.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableExtensions">
+            <summary>
+              Gets or sets a value indicating whether to use Search Extensions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableHistoryHeuristic">
+            <summary>
+              Gets or sets a value indicating whether to use the history heuristic ( <see cref="T:SharpChess.Model.AI.HistoryHeuristic" /> class).
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableKillerMoves">
+            <summary>
+              Gets or sets a value indicating whether to use the killer move heuristic ( <see cref="T:SharpChess.Model.AI.KillerMoves" /> class).
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableNullMovePruning">
+            <summary>
+              Gets or sets a value indicating whether to use Null Move Forward Pruning.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnablePondering">
+            <summary>
+              Gets or sets a value indicating whether Pondering has been enabled.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnablePvsSearch">
+            <summary>
+              Gets or sets a value indicating whether to use PVS Search.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableQuiescense">
+            <summary>
+              Gets or sets a value indicating whether to use Quiescense.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableReductions">
+            <summary>
+              Gets or sets a value indicating whether to use Search Reductions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableReductionLateMove">
+            <summary>
+              Gets or sets a value indicating whether to use Late Move Reductions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableReductionFutilityMargin">
+            <summary>
+              Gets or sets a value indicating whether to use Margin Futilty Reductions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableReductionFutilityFixedDepth">
+            <summary>
+              Gets or sets a value indicating whether to use Fixed Depth Futilty Reductions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.EnableTranspositionTable">
+            <summary>
+              Gets or sets a value indicating whether to use the transposition table ( <see cref="T:SharpChess.Model.AI.HashTable" /> class).
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.FenStartPosition">
+            <summary>
+              Gets or sets the FEN string for the chess Start Position.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.FiftyMoveDrawBase">
+            <summary>
+              Gets or sets FiftyMoveDrawBase. Appears to be a value set when using a FEN string. Doesn't seem quite right! TODO Invesigate FiftyMoveDrawBase.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.FileName">
+            <summary>
+              Gets the current game save file name.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.IsInAnalyseMode">
+            <summary>
+              Gets or sets a value indicating whether Analyse Mode is active.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.IsPaused">
+            <summary>
+              Gets a value indicating whether the game is paused.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.LowestMaterialCount">
+            <summary>
+              Gets the lowest material count for black or white.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.MaxMaterialCount">
+            <summary>
+              Gets the largest valid Material Count.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.MaximumSearchDepth">
+            <summary>
+              Gets or sets the maximum search depth.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.MoveAnalysis">
+            <summary>
+              Gets or sets the list of move-analysis moves.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.MoveHistory">
+            <summary>
+              Gets the currebt move history.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.MoveNo">
+            <summary>
+              Gets the current move number.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.MoveRedoList">
+            <summary>
+              Gets the move redo list.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.PlayerBlack">
+            <summary>
+              Gets black player.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.PlayerToPlay">
+            <summary>
+              Gets or sets the player to play.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.PlayerWhite">
+            <summary>
+              Gets white player.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.ShowThinking">
+            <summary>
+              Gets or sets a value indicating whether to show thinking.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.Stage">
+            <summary>
+              Gets current game stage.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.ThreadCounter">
+            <summary>
+              Gets ThreadCounter.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.TurnNo">
+            <summary>
+              Gets the current turn number.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Game.UseRandomOpeningMoves">
+            <summary>
+              Gets or sets a value indicating whether to use random opening moves.
             </summary>
         </member>
         <member name="M:SharpChess.Model.Game.CaptureAllPieces">
@@ -2033,282 +2293,11 @@
               Undo move. For internal use only.
             </summary>
         </member>
-        <member name="E:SharpChess.Model.Game.BoardPositionChanged">
-            <summary>
-              Raised when the board position changes.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.Game.GamePaused">
-            <summary>
-              Raised when the game is paused.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.Game.GameResumed">
-            <summary>
-              Raised when the game is resumed.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.Game.GameSaved">
-            <summary>
-              Riased when the game is saved.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.Game.SettingsUpdated">
-            <summary>
-              Raised when settings are updated.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.AvailableMegaBytes">
-            <summary>
-              Gets the available MegaBytes of free computer memory.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.BackupGamePath">
-            <summary>
-              Gets or sets the Backup Game Path.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.CaptureMoveAnalysisData">
-            <summary>
-              Gets or sets a value indicating whether CaptureMoveAnalysisData.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.ClockFixedTimePerMove">
-            <summary>
-              Gets or sets the Clock Fixed Time Per Move.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.ClockIncrementPerMove">
-            <summary>
-              Gets or sets the Clock Increment Per Move.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.ClockMaxMoves">
-            <summary>
-              Gets or sets the max number of moves on the clock. e.g. 60 moves in 30 minutes
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.ClockTime">
-            <summary>
-              Gets or sets the Clock Time.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.DifficultyLevel">
-            <summary>
-              Gets or sets game Difficulty Level.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EditModeActive">
-            <summary>
-              Gets a value indicating whether Edit Mode is Active.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableAspiration">
-            <summary>
-              Gets or sets a value indicating whether to use Aspiration Search.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableExtensions">
-            <summary>
-              Gets or sets a value indicating whether to use Search Extensions.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableHistoryHeuristic">
-            <summary>
-              Gets or sets a value indicating whether to use the history heuristic ( <see cref="T:SharpChess.Model.AI.HistoryHeuristic"/> class).
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableKillerMoves">
-            <summary>
-              Gets or sets a value indicating whether to use the killer move heuristic ( <see cref="T:SharpChess.Model.AI.KillerMoves"/> class).
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableNullMovePruning">
-            <summary>
-              Gets or sets a value indicating whether to use Null Move Forward Pruning.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnablePondering">
-            <summary>
-              Gets or sets a value indicating whether Pondering has been enabled.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnablePvsSearch">
-            <summary>
-              Gets or sets a value indicating whether to use PVS Search.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableQuiescense">
-            <summary>
-              Gets or sets a value indicating whether to use Quiescense.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableReductions">
-            <summary>
-              Gets or sets a value indicating whether to use Search Reductions.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableReductionLateMove">
-            <summary>
-              Gets or sets a value indicating whether to use Late Move Reductions.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableReductionFutilityMargin">
-            <summary>
-              Gets or sets a value indicating whether to use Margin Futilty Reductions.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableReductionFutilityFixedDepth">
-            <summary>
-              Gets or sets a value indicating whether to use Fixed Depth Futilty Reductions.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.EnableTranspositionTable">
-            <summary>
-              Gets or sets a value indicating whether to use the transposition table ( <see cref="T:SharpChess.Model.AI.HashTable"/> class).
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.FenStartPosition">
-            <summary>
-              Gets or sets the FEN string for the chess Start Position.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.FiftyMoveDrawBase">
-            <summary>
-              Gets or sets FiftyMoveDrawBase. Appears to be a value set when using a FEN string. Doesn't seem quite right! TODO Invesigate FiftyMoveDrawBase.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.FileName">
-            <summary>
-              Gets the current game save file name.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.IsInAnalyseMode">
-            <summary>
-              Gets or sets a value indicating whether Analyse Mode is active.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.IsPaused">
-            <summary>
-              Gets a value indicating whether the game is paused.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.LowestMaterialCount">
-            <summary>
-              Gets the lowest material count for black or white.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.MaxMaterialCount">
-            <summary>
-              Gets the largest valid Material Count.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.MaximumSearchDepth">
-            <summary>
-              Gets or sets the maximum search depth.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.MoveAnalysis">
-            <summary>
-              Gets or sets the list of move-analysis moves.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.MoveHistory">
-            <summary>
-              Gets the currebt move history.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.MoveNo">
-            <summary>
-              Gets the current move number.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.MoveRedoList">
-            <summary>
-              Gets the move redo list.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.PlayerBlack">
-            <summary>
-              Gets black player.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.PlayerToPlay">
-            <summary>
-              Gets or sets the player to play.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.PlayerWhite">
-            <summary>
-              Gets white player.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.ShowThinking">
-            <summary>
-              Gets or sets a value indicating whether to show thinking.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.Stage">
-            <summary>
-              Gets current game stage.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.ThreadCounter">
-            <summary>
-              Gets ThreadCounter.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.TurnNo">
-            <summary>
-              Gets the current turn number.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Game.UseRandomOpeningMoves">
-            <summary>
-              Gets or sets a value indicating whether to use random opening moves.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.Game.GameEvent">
-            <summary>
-              The game event type, raised to the UI when significant game events occur.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.Game.GameStageNames">
-            <summary>
-              Game stages.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Game.GameStageNames.Opening">
-            <summary>
-              The opening.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Game.GameStageNames.Middle">
-            <summary>
-              The middle.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Game.GameStageNames.End">
-            <summary>
-              The end.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.IPieceTop">
             <summary>
             IPieceTop interface. The <see cref="T:SharpChess.Model.Piece"/>  class represents the base of a chess piece, on which different "tops" can be placed. 
             The Top of a piece will change when a piece is promoted. e.g. a Pawn is promoted to a Queen, or a Knight.
             </summary>
-        </member>
-        <member name="M:SharpChess.Model.IPieceTop.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            The generate lazy moves.
-            </summary>
-            <param name="moves">
-            The moves.
-            </param>
-            <param name="movesType">
-            The moves type.
-            </param>
         </member>
         <member name="P:SharpChess.Model.IPieceTop.Abbreviation">
             <summary>
@@ -2350,6 +2339,17 @@
             Gets the base score value for the piece e.g. 9000 for Queen, 1000 for a Pawn.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.IPieceTop.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            The generate lazy moves.
+            </summary>
+            <param name="moves">
+            The moves.
+            </param>
+            <param name="movesType">
+            The moves type.
+            </param>
+        </member>
         <member name="T:SharpChess.Model.Move">
             <summary>
             Represents a chess move.
@@ -2387,60 +2387,55 @@
             The positional score.
             </param>
         </member>
-        <member name="M:SharpChess.Model.Move.MoveNameFromString(System.String)">
+        <member name="T:SharpChess.Model.Move.MoveNames">
             <summary>
-            Gets move name from text.
+            Move type names.
             </summary>
-            <param name="moveName">
-            The move name text.
-            </param>
-            <returns>
-            The Move Name.
-            </returns>
         </member>
-        <member name="M:SharpChess.Model.Move.MovesMatch(SharpChess.Model.Move,SharpChess.Model.Move)">
+        <member name="F:SharpChess.Model.Move.MoveNames.Standard">
             <summary>
-            Determine where two moves are identical moves.
+            Standard move.
             </summary>
-            <param name="moveA">
-            Move A.
-            </param>
-            <param name="moveB">
-            Move B.
-            </param>
-            <returns>
-            True if moves match.
-            </returns>
         </member>
-        <member name="M:SharpChess.Model.Move.Undo(SharpChess.Model.Move)">
+        <member name="F:SharpChess.Model.Move.MoveNames.CastleQueenSide">
             <summary>
-            Undo the specified move.
+            Castling queen side.
             </summary>
-            <param name="move">
-            Move to undo.
-            </param>
         </member>
-        <member name="M:SharpChess.Model.Move.CompareTo(System.Object)">
+        <member name="F:SharpChess.Model.Move.MoveNames.CastleKingSide">
             <summary>
-            Compare the score of this move, and the specified move.
+            Castling king side.
             </summary>
-            <param name="move">
-            Nove to compare.
-            </param>
-            <returns>
-            1 if specified move score is less, -1 if more, otherwise 0
-            </returns>
         </member>
-        <member name="M:SharpChess.Model.Move.IsPromotion">
+        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionQueen">
             <summary>
-            Is the move a promotion of pawn
+            Pawn promotion to queen.
             </summary>
-            <returns>
-            true if promotion otherwise false
-            </returns>
-            <remarks>
-            Keep the order of the enumeration <see cref="T:SharpChess.Model.Move.MoveNames"/>.PawnPromotionQueen before PawnPromotionBishop
-            </remarks>
+        </member>
+        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionRook">
+            <summary>
+            Pawn promotion to rook.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionKnight">
+            <summary>
+            Pawn promotion to knight.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionBishop">
+            <summary>
+            Pawn promotion to bishop.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Move.MoveNames.EnPassent">
+            <summary>
+            En passent move.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Move.MoveNames.NullMove">
+            <summary>
+            A null move.
+            </summary>
         </member>
         <member name="P:SharpChess.Model.Move.Alpha">
             <summary>
@@ -2567,55 +2562,60 @@
             Gets the ordinal of the piece being captured.
             </summary>
         </member>
-        <member name="T:SharpChess.Model.Move.MoveNames">
+        <member name="M:SharpChess.Model.Move.MoveNameFromString(System.String)">
             <summary>
-            Move type names.
+            Gets move name from text.
             </summary>
+            <param name="moveName">
+            The move name text.
+            </param>
+            <returns>
+            The Move Name.
+            </returns>
         </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.Standard">
+        <member name="M:SharpChess.Model.Move.MovesMatch(SharpChess.Model.Move,SharpChess.Model.Move)">
             <summary>
-            Standard move.
+            Determine where two moves are identical moves.
             </summary>
+            <param name="moveA">
+            Move A.
+            </param>
+            <param name="moveB">
+            Move B.
+            </param>
+            <returns>
+            True if moves match.
+            </returns>
         </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.CastleQueenSide">
+        <member name="M:SharpChess.Model.Move.Undo(SharpChess.Model.Move)">
             <summary>
-            Castling queen side.
+            Undo the specified move.
             </summary>
+            <param name="move">
+            Move to undo.
+            </param>
         </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.CastleKingSide">
+        <member name="M:SharpChess.Model.Move.CompareTo(System.Object)">
             <summary>
-            Castling king side.
+            Compare the score of this move, and the specified move.
             </summary>
+            <param name="move">
+            Nove to compare.
+            </param>
+            <returns>
+            1 if specified move score is less, -1 if more, otherwise 0
+            </returns>
         </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionQueen">
+        <member name="M:SharpChess.Model.Move.IsPromotion">
             <summary>
-            Pawn promotion to queen.
+            Is the move a promotion of pawn
             </summary>
-        </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionRook">
-            <summary>
-            Pawn promotion to rook.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionKnight">
-            <summary>
-            Pawn promotion to knight.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.PawnPromotionBishop">
-            <summary>
-            Pawn promotion to bishop.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.EnPassent">
-            <summary>
-            En passent move.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Move.MoveNames.NullMove">
-            <summary>
-            A null move.
-            </summary>
+            <returns>
+            true if promotion otherwise false
+            </returns>
+            <remarks>
+            Keep the order of the enumeration <see cref="T:SharpChess.Model.Move.MoveNames"/>.PawnPromotionQueen before PawnPromotionBishop
+            </remarks>
         </member>
         <member name="T:SharpChess.Model.Moves">
             <summary>
@@ -2639,6 +2639,67 @@
             <param name="pieceParent">
             The piece parent.
             </param>
+        </member>
+        <member name="T:SharpChess.Model.Moves.MoveListNames">
+            <summary>
+            Indicates how the move list was generated.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Moves.MoveListNames.All">
+            <summary>
+            All moves.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Moves.MoveListNames.Recaptures">
+            <summary>
+            Recaptures only.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Moves.MoveListNames.CapturesPromotions">
+            <summary>
+            Captures and promotions.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Moves.MoveListNames.CapturesChecksPromotions">
+            <summary>
+            Captures, checks and promotions.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Moves.Count">
+            <summary>
+            Gets the number of moves contained in the move list.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Moves.Last">
+            <summary>
+            Gets the Last move.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Moves.Parent">
+            <summary>
+            Gets Parent object that is holding this move list.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Moves.Penultimate">
+            <summary>
+            Gets Penultimate move in this list.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Moves.PenultimateForSameSide">
+            <summary>
+            Gets penultimate move in this list For the same side.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Moves.Item(System.Int32)">
+            <summary>
+            Returns the move specified by the index.
+            </summary>
+            <param name="intIndex">
+            The index value.
+            </param>
+            <returns>
+            The move at the specified index position.
+            </returns>
         </member>
         <member name="M:SharpChess.Model.Moves.Add(System.Int32,System.Int32,SharpChess.Model.Move.MoveNames,SharpChess.Model.Piece,SharpChess.Model.Square,SharpChess.Model.Square,SharpChess.Model.Piece,System.Int32,System.Int32)">
             <summary>
@@ -2772,75 +2833,9 @@
             Upper bound
             </param>
         </member>
-        <member name="P:SharpChess.Model.Moves.Count">
-            <summary>
-            Gets the number of moves contained in the move list.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Moves.Last">
-            <summary>
-            Gets the Last move.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Moves.Parent">
-            <summary>
-            Gets Parent object that is holding this move list.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Moves.Penultimate">
-            <summary>
-            Gets Penultimate move in this list.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Moves.PenultimateForSameSide">
-            <summary>
-            Gets penultimate move in this list For the same side.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Moves.Item(System.Int32)">
-            <summary>
-            Returns the move specified by the index.
-            </summary>
-            <param name="intIndex">
-            The index value.
-            </param>
-            <returns>
-            The move at the specified index position.
-            </returns>
-        </member>
-        <member name="T:SharpChess.Model.Moves.MoveListNames">
-            <summary>
-            Indicates how the move list was generated.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Moves.MoveListNames.All">
-            <summary>
-            All moves.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Moves.MoveListNames.Recaptures">
-            <summary>
-            Recaptures only.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Moves.MoveListNames.CapturesPromotions">
-            <summary>
-            Captures and promotions.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Moves.MoveListNames.CapturesChecksPromotions">
-            <summary>
-            Captures, checks and promotions.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.PGNtoXML">
             <summary>
-            Converts PGN opening book files, into SharpChess XML files, which may then be used with <see cref="T:SharpChess.Model.AI.OpeningBook"/> and <see cref="T:SharpChess.Model.AI.OpeningBookSimple"/> classes.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.PGNtoXML.Go">
-            <summary>
-            The go.
+            Converts PGN opening book files, into SharpChess XML files, which may then be used with <see cref = "T:SharpChess.Model.AI.OpeningBook" /> and <see cref = "T:SharpChess.Model.AI.OpeningBookSimple" /> classes.
             </summary>
         </member>
         <member name="T:SharpChess.Model.PGNtoXML.StateNames">
@@ -2856,6 +2851,11 @@
         <member name="F:SharpChess.Model.PGNtoXML.StateNames.MoveNotation">
             <summary>
               The move notation.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.PGNtoXML.Go">
+            <summary>
+            The go.
             </summary>
         </member>
         <member name="T:SharpChess.Model.Piece">
@@ -2889,237 +2889,6 @@
             <param name="identifier">
             Piece identifier.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.Piece.CanPlayerPieceNameAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player,SharpChess.Model.Piece.PieceNames)">
-            <summary>
-             can a given player's piece name attack a given square?
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <param name="PieceName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.CanBeDrivenAwayByPawn">
-            <summary>
-            Indicates whether the piece would be attackable by a nearby enemy pawm, if the enemy pawn were to advance.
-            </summary>
-            <returns>
-            True, if can be driven away.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.Capture">
-            <summary>
-            Capture this piece.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.Piece.Demote">
-            <summary>
-            Demote this piece back to a pawn.
-            </summary>
-            <exception cref="T:System.ApplicationException">
-            Indicates failure to demote this piece.
-            </exception>
-        </member>
-        <member name="M:SharpChess.Model.Piece.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.Piece.GenerateLegalMoves(SharpChess.Model.Moves)">
-            <summary>
-            The generate legal moves.
-            </summary>
-            <param name="moves">
-            The moves.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.Piece.HashCodeAForSquareOrdinal(System.Int32)">
-            <summary>
-            The hash code A for square ordinal.
-            </summary>
-            <param name="ordinal">
-            The ordinal.
-            </param>
-            <returns>
-            Hash code A.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.HashCodeBForSquareOrdinal(System.Int32)">
-            <summary>
-            The hash code b for square ordinal.
-            </summary>
-            <param name="ordinal">
-            The ordinal.
-            </param>
-            <returns>
-            Hash code B.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.TestAndMakeMove(SharpChess.Model.Move.MoveNames,SharpChess.Model.Square)">
-            <summary>
-            Move the piece to a new square, after testing that the move is valid.
-            </summary>
-            <param name="moveName">
-            The move name.
-            </param>
-            <param name="square">
-            The square.
-            </param>
-            <returns>
-            Move made, or null if move is not valid.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.Move(SharpChess.Model.Move.MoveNames,SharpChess.Model.Square)">
-            <summary>
-            Move the piece to a new square.
-            </summary>
-            <param name="moveName">
-            The move name.
-            </param>
-            <param name="square">
-            The square.
-            </param>
-            <returns>
-            Move made.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.Promote(SharpChess.Model.Piece.PieceNames)">
-            <summary>
-            Promote a pawn (change its top to a queen or knight).
-            </summary>
-            <param name="name">
-            Name of piece to change the pawn into.
-            </param>
-            <exception cref="T:System.ApplicationException">
-            Indicates failure to promote the piece.
-            </exception>
-        </member>
-        <member name="M:SharpChess.Model.Piece.TaxiCabDistanceToEnemyKingPenalty">
-            <summary>
-            Calculates a penalty positional score based upon the distance to the enemy king - allowing only horizonal or vertical movement (like a rook).
-            </summary>
-            <returns>
-            The taxi cab distance to enemy king penalty.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Piece.Uncapture(System.Int32)">
-            <summary>
-            Undo the capture of a piece. Placing it back on the correct board square is handled in the Move.Undo method.
-            </summary>
-            <param name="ordinal">
-            The ordinal.
-            </param>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Abbreviation">
-            <summary>
-              Gets the piece's abbreviation.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Base">
-            <summary>
-              Gets the base part of the piece. i.e. the bit that sits on the chess square.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.BasicValue">
-            <summary>
-              Gets basic value of the piece. e.g. pawn = 1, bishop = 3, queen = 9
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.DefensePoints">
-            <summary>
-              Gets a score based upon how well defended this piece is.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.HasBeenPromoted">
-            <summary>
-              Gets a value indicating whether this piece has been promoted yet.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.HasMoved">
-            <summary>
-              Gets a value indicating whether this piece has been moved yet.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.HashCodeA">
-            <summary>
-            Gets the board position HashCodeA for this piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.HashCodeB">
-            <summary>
-            Gets the board position HashCodeB for this piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.ImageIndex">
-            <summary>
-             Gets the image index for this piece. Used to determine which graphic image is displayed for thie piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.IsCapturable">
-            <summary>
-            Gets a value indicating whether the piece is capturable. Kings aren't, everything else is.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.IsInPlay">
-            <summary>
-            Gets a value indicating whether is still in-play. A piece leaves play when it has been captured.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.LastMoveTurnNo">
-            <summary>
-              Gets or sets the turn number in which the piece was last moved.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Name">
-            <summary>
-            Gets the piece's name.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.NoOfMoves">
-            <summary>
-              Gets or sets number of moves the piece has made.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Player">
-            <summary>
-            Gets the player who owns the piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.PositionalPoints">
-            <summary>
-            Gets the positional points assigned to this piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Square">
-            <summary>
-              Gets or sets square that this piece is located on.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.StartLocation">
-            <summary>
-              Gets start location for this piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Top">
-            <summary>
-              Gets Top.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.Value">
-            <summary>
-            Gets the material value of this piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Piece.IdentifierCode">
-            <summary>
-              Gets or sets the identifier code for the piece. e.g. WhitePawn1
-            </summary>
         </member>
         <member name="T:SharpChess.Model.Piece.PieceIdentifierCodes">
             <summary>
@@ -3321,6 +3090,237 @@
               The king.
             </summary>
         </member>
+        <member name="P:SharpChess.Model.Piece.Abbreviation">
+            <summary>
+              Gets the piece's abbreviation.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.Base">
+            <summary>
+              Gets the base part of the piece. i.e. the bit that sits on the chess square.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.BasicValue">
+            <summary>
+              Gets basic value of the piece. e.g. pawn = 1, bishop = 3, queen = 9
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.DefensePoints">
+            <summary>
+              Gets a score based upon how well defended this piece is.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.HasBeenPromoted">
+            <summary>
+              Gets a value indicating whether this piece has been promoted yet.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.HasMoved">
+            <summary>
+              Gets a value indicating whether this piece has been moved yet.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.HashCodeA">
+            <summary>
+            Gets the board position HashCodeA for this piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.HashCodeB">
+            <summary>
+            Gets the board position HashCodeB for this piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.ImageIndex">
+            <summary>
+             Gets the image index for this piece. Used to determine which graphic image is displayed for thie piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.IsCapturable">
+            <summary>
+            Gets a value indicating whether the piece is capturable. Kings aren't, everything else is.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.IsInPlay">
+            <summary>
+            Gets a value indicating whether is still in-play. A piece leaves play when it has been captured.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.LastMoveTurnNo">
+            <summary>
+              Gets or sets the turn number in which the piece was last moved.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.Name">
+            <summary>
+            Gets the piece's name.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.NoOfMoves">
+            <summary>
+              Gets or sets number of moves the piece has made.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.Player">
+            <summary>
+            Gets the player who owns the piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.PositionalPoints">
+            <summary>
+            Gets the positional points assigned to this piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.Square">
+            <summary>
+              Gets or sets square that this piece is located on.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.StartLocation">
+            <summary>
+              Gets start location for this piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.Top">
+            <summary>
+              Gets Top.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.Value">
+            <summary>
+            Gets the material value of this piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Piece.IdentifierCode">
+            <summary>
+              Gets or sets the identifier code for the piece. e.g. WhitePawn1
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.Piece.CanPlayerPieceNameAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player,SharpChess.Model.Piece.PieceNames)">
+            <summary>
+             can a given player's piece name attack a given square?
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <param name="PieceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.CanBeDrivenAwayByPawn">
+            <summary>
+            Indicates whether the piece would be attackable by a nearby enemy pawm, if the enemy pawn were to advance.
+            </summary>
+            <returns>
+            True, if can be driven away.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.Capture">
+            <summary>
+            Capture this piece.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.Piece.Demote">
+            <summary>
+            Demote this piece back to a pawn.
+            </summary>
+            <exception cref="T:System.ApplicationException">
+            Indicates failure to demote this piece.
+            </exception>
+        </member>
+        <member name="M:SharpChess.Model.Piece.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.Piece.GenerateLegalMoves(SharpChess.Model.Moves)">
+            <summary>
+            The generate legal moves.
+            </summary>
+            <param name="moves">
+            The moves.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.Piece.HashCodeAForSquareOrdinal(System.Int32)">
+            <summary>
+            The hash code A for square ordinal.
+            </summary>
+            <param name="ordinal">
+            The ordinal.
+            </param>
+            <returns>
+            Hash code A.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.HashCodeBForSquareOrdinal(System.Int32)">
+            <summary>
+            The hash code b for square ordinal.
+            </summary>
+            <param name="ordinal">
+            The ordinal.
+            </param>
+            <returns>
+            Hash code B.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.TestAndMakeMove(SharpChess.Model.Move.MoveNames,SharpChess.Model.Square)">
+            <summary>
+            Move the piece to a new square, after testing that the move is valid.
+            </summary>
+            <param name="moveName">
+            The move name.
+            </param>
+            <param name="square">
+            The square.
+            </param>
+            <returns>
+            Move made, or null if move is not valid.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.Move(SharpChess.Model.Move.MoveNames,SharpChess.Model.Square)">
+            <summary>
+            Move the piece to a new square.
+            </summary>
+            <param name="moveName">
+            The move name.
+            </param>
+            <param name="square">
+            The square.
+            </param>
+            <returns>
+            Move made.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.Promote(SharpChess.Model.Piece.PieceNames)">
+            <summary>
+            Promote a pawn (change its top to a queen or knight).
+            </summary>
+            <param name="name">
+            Name of piece to change the pawn into.
+            </param>
+            <exception cref="T:System.ApplicationException">
+            Indicates failure to promote the piece.
+            </exception>
+        </member>
+        <member name="M:SharpChess.Model.Piece.TaxiCabDistanceToEnemyKingPenalty">
+            <summary>
+            Calculates a penalty positional score based upon the distance to the enemy king - allowing only horizonal or vertical movement (like a rook).
+            </summary>
+            <returns>
+            The taxi cab distance to enemy king penalty.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Piece.Uncapture(System.Int32)">
+            <summary>
+            Undo the capture of a piece. Placing it back on the correct board square is handled in the Move.Undo method.
+            </summary>
+            <param name="ordinal">
+            The ordinal.
+            </param>
+        </member>
         <member name="T:SharpChess.Model.PieceBishop">
             <summary>
             A bishop piece top.
@@ -3343,25 +3343,6 @@
             <param name="pieceBase">
             Base part of the piece.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceBishop.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceBishop.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
-            <summary>
-             static method to determine if a square is attacked by this piece
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <returns></returns>
         </member>
         <member name="P:SharpChess.Model.PieceBishop.Abbreviation">
             <summary>
@@ -3403,6 +3384,25 @@
             Gets the material value of this piece.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PieceBishop.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PieceBishop.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
+            <summary>
+             static method to determine if a square is attacked by this piece
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
         <member name="T:SharpChess.Model.PieceHashCodes">
             <summary>
             Zobrist Hash values used in Hash (Transposition) Table class.
@@ -3440,52 +3440,6 @@
             <param name="pieceBase">
             The piece base.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceKing.DetermineCheckStatus">
-            <summary>
-            Determine if the king is in check.
-            </summary>
-            <returns>
-            Returns true if the king is in check.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.PieceKing.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceKing.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
-            <summary>
-             static method to determine if a square is attacked by this piece
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <returns></returns>
-        </member>
-        <member name="M:SharpChess.Model.PieceKing.MoveSquares(SharpChess.Model.Squares@)">
-            <summary>
-            The move squares.
-            </summary>
-            <param name="squares">
-            The squares.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceKing.Openness(SharpChess.Model.Square)">
-            <summary>
-            Calculate a positonal score penalty based upon the openness of the King.
-            </summary>
-            <param name="squareKing">
-            The square king.
-            </param>
-            <returns>
-            The openness penalty.
-            </returns>
         </member>
         <member name="P:SharpChess.Model.PieceKing.Abbreviation">
             <summary>
@@ -3537,6 +3491,52 @@
             Gets the material value of the piece.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PieceKing.DetermineCheckStatus">
+            <summary>
+            Determine if the king is in check.
+            </summary>
+            <returns>
+            Returns true if the king is in check.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.PieceKing.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PieceKing.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
+            <summary>
+             static method to determine if a square is attacked by this piece
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpChess.Model.PieceKing.MoveSquares(SharpChess.Model.Squares@)">
+            <summary>
+            The move squares.
+            </summary>
+            <param name="squares">
+            The squares.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PieceKing.Openness(SharpChess.Model.Square)">
+            <summary>
+            Calculate a positonal score penalty based upon the openness of the King.
+            </summary>
+            <param name="squareKing">
+            The square king.
+            </param>
+            <returns>
+            The openness penalty.
+            </returns>
+        </member>
         <member name="T:SharpChess.Model.PieceKnight">
             <summary>
             The piece knight.
@@ -3559,26 +3559,6 @@
             <param name="pieceBase">
             The piece base.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceKnight.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceKnight.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
-            <summary>
-             static method to determine if a square is attacked by this piece
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <returns></returns>
-            
         </member>
         <member name="P:SharpChess.Model.PieceKnight.Abbreviation">
             <summary>
@@ -3620,6 +3600,26 @@
             Gets the material value of this piece.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PieceKnight.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PieceKnight.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
+            <summary>
+             static method to determine if a square is attacked by this piece
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <returns></returns>
+            
+        </member>
         <member name="T:SharpChess.Model.PiecePawn">
             <summary>
             The piece pawn.
@@ -3642,33 +3642,6 @@
             <param name="pieceBase">
             The piece base.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.PiecePawn.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PiecePawn.PawnForkTwoMajorPiecesBonus">
-            <summary>
-            Calculates a bonus when the pawn folk two major pieces.
-            </summary>
-            <returns>
-            Value of the cheapest forked piece.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.PiecePawn.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
-            <summary>
-             static method to determine if a square is attacked by this piece
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <returns></returns>
         </member>
         <member name="P:SharpChess.Model.PiecePawn.Abbreviation">
             <summary>
@@ -3716,6 +3689,33 @@
               Gets the material value of this piece.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PiecePawn.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PiecePawn.PawnForkTwoMajorPiecesBonus">
+            <summary>
+            Calculates a bonus when the pawn folk two major pieces.
+            </summary>
+            <returns>
+            Value of the cheapest forked piece.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.PiecePawn.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
+            <summary>
+             static method to determine if a square is attacked by this piece
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
         <member name="T:SharpChess.Model.PieceQueen">
             <summary>
             The piece queen.
@@ -3733,25 +3733,6 @@
             <param name="pieceBase">
             The piece base.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceQueen.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceQueen.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
-            <summary>
-             static method to determine if a square is attacked by this piece
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <returns></returns>
         </member>
         <member name="P:SharpChess.Model.PieceQueen.Abbreviation">
             <summary>
@@ -3793,6 +3774,25 @@
             Gets the material value of this piece.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PieceQueen.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PieceQueen.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
+            <summary>
+             static method to determine if a square is attacked by this piece
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
         <member name="T:SharpChess.Model.PieceRook">
             <summary>
             The piece rook.
@@ -3815,25 +3815,6 @@
             <param name="pieceBase">
             The piece base.
             </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceRook.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
-            </summary>
-            <param name="moves">
-            Moves list that will be populated with lazy moves.
-            </param>
-            <param name="movesType">
-            Types of moves to include. e.g. All, or captures-only.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.PieceRook.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
-            <summary>
-             static method to determine if a square is attacked by this piece
-            </summary>
-            <param name="square"></param>
-            <param name="player"></param>
-            <returns></returns>
         </member>
         <member name="P:SharpChess.Model.PieceRook.Abbreviation">
             <summary>
@@ -3875,6 +3856,25 @@
             Gets the material value of this piece.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PieceRook.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for this piece, which is all usual legal moves, but also includes moves that put the king in check.
+            </summary>
+            <param name="moves">
+            Moves list that will be populated with lazy moves.
+            </param>
+            <param name="movesType">
+            Types of moves to include. e.g. All, or captures-only.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.PieceRook.DoesPieceAttackSquare(SharpChess.Model.Square,SharpChess.Model.Player)">
+            <summary>
+             static method to determine if a square is attacked by this piece
+            </summary>
+            <param name="square"></param>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
         <member name="T:SharpChess.Model.Pieces">
             <summary>
             A list of pieces.
@@ -3883,6 +3883,11 @@
         <member name="F:SharpChess.Model.Pieces.pieces">
             <summary>
             Internal ArrayList of pieces.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Pieces.Count">
+            <summary>
+            Gets Count.
             </summary>
         </member>
         <member name="M:SharpChess.Model.Pieces.Add(SharpChess.Model.Piece)">
@@ -3955,11 +3960,6 @@
             The sort the pieces by their score value.
             </summary>
         </member>
-        <member name="P:SharpChess.Model.Pieces.Count">
-            <summary>
-            Gets Count.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.Player">
             <summary>
             The player.
@@ -3967,94 +3967,62 @@
         </member>
         <member name="M:SharpChess.Model.Player.#ctor">
             <summary>
-              Initializes a new instance of the <see cref="T:SharpChess.Model.Player"/> class.
+              Initializes a new instance of the <see cref = "T:SharpChess.Model.Player" /> class.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.PieceTypes">
-            get a list of all piecetypes
-        </member>
-        <member name="M:SharpChess.Model.Player.CanClaimMoveRepetitionDraw(System.Int32)">
+        <member name="T:SharpChess.Model.Player.PlayerColourNames">
             <summary>
-            The can claim move repetition draw.
-            </summary>
-            <param name="numberOfMoves">
-            The no of moves.
-            </param>
-            <returns>
-            True if, can claim move repetition draw.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Player.CaptureAllPieces">
-            <summary>
-            The capture all pieces.
+            Player Colour Names
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.DecreaseMaterialCount">
+        <member name="F:SharpChess.Model.Player.PlayerColourNames.White">
             <summary>
-            The decrease material count.
+              White colour.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.DecreasePawnCount">
+        <member name="F:SharpChess.Model.Player.PlayerColourNames.Black">
             <summary>
-            The decrease pawn count.
+              Black colour.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.DemoteAllPieces">
+        <member name="T:SharpChess.Model.Player.PlayerIntellegenceNames">
             <summary>
-            The demote all pieces.
+            Player intellegence: Human or Computer.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.DetermineCheckStatus">
+        <member name="F:SharpChess.Model.Player.PlayerIntellegenceNames.Human">
             <summary>
-            Determine check status.
-            </summary>
-            <returns>
-            Return check status.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Player.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
-            <summary>
-            Generate "lazy" moves for all pieces. Lazy means we include moves that put our own king in check.
-            </summary>
-            <param name="moves">
-            Move list to be filled with moves.
-            </param>
-            <param name="movesType">
-            Type of moves to be generated. e.g. all or just captures.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.Player.GenerateLegalMoves(SharpChess.Model.Moves)">
-            <summary>
-            Generate legal moves. i.e. exclude moves that would put own king in check.
-            </summary>
-            <param name="moves">
-            The moves.
-            </param>
-        </member>
-        <member name="M:SharpChess.Model.Player.HasPieceName(SharpChess.Model.Piece.PieceNames)">
-            <summary>
-            Determines of the player has the specified piece.
-            </summary>
-            <param name="piecename">
-            The piecename.
-            </param>
-            <returns>
-            True if player has the piece.
-            </returns>
-        </member>
-        <member name="M:SharpChess.Model.Player.IncreaseMaterialCount">
-            <summary>
-            The increase material count.
+              Human player.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.IncreasePawnCount">
+        <member name="F:SharpChess.Model.Player.PlayerIntellegenceNames.Computer">
             <summary>
-            The increase pawn count.
+              Computer player.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.Player.SetPiecesAtStartingPositions">
+        <member name="T:SharpChess.Model.Player.PlayerStatusNames">
             <summary>
-            The set pieces at starting positions.
+            Player status: in-check, statemate etc...
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Player.PlayerStatusNames.Normal">
+            <summary>
+              Player game in progress.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Player.PlayerStatusNames.InCheck">
+            <summary>
+              Player is in check.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Player.PlayerStatusNames.InStalemate">
+            <summary>
+              Player is in stalemate.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Player.PlayerStatusNames.InCheckMate">
+            <summary>
+              Player is in check mate.
             </summary>
         </member>
         <member name="P:SharpChess.Model.Player.Brain">
@@ -4162,6 +4130,9 @@
               Gets all the player's pieces in play.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.Player.PieceTypes">
+            get a list of all piecetypes
+        </member>
         <member name="P:SharpChess.Model.Player.Points">
             <summary>
               Gets positional points for all the player's pieces in play, including matieral value.
@@ -4194,59 +4165,88 @@
               Gets the sum of the player's piece value.
             </summary>
         </member>
-        <member name="T:SharpChess.Model.Player.PlayerColourNames">
+        <member name="M:SharpChess.Model.Player.CanClaimMoveRepetitionDraw(System.Int32)">
             <summary>
-            Player Colour Names
+            The can claim move repetition draw.
+            </summary>
+            <param name="numberOfMoves">
+            The no of moves.
+            </param>
+            <returns>
+            True if, can claim move repetition draw.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Player.CaptureAllPieces">
+            <summary>
+            The capture all pieces.
             </summary>
         </member>
-        <member name="F:SharpChess.Model.Player.PlayerColourNames.White">
+        <member name="M:SharpChess.Model.Player.DecreaseMaterialCount">
             <summary>
-              White colour.
+            The decrease material count.
             </summary>
         </member>
-        <member name="F:SharpChess.Model.Player.PlayerColourNames.Black">
+        <member name="M:SharpChess.Model.Player.DecreasePawnCount">
             <summary>
-              Black colour.
+            The decrease pawn count.
             </summary>
         </member>
-        <member name="T:SharpChess.Model.Player.PlayerIntellegenceNames">
+        <member name="M:SharpChess.Model.Player.DemoteAllPieces">
             <summary>
-            Player intellegence: Human or Computer.
+            The demote all pieces.
             </summary>
         </member>
-        <member name="F:SharpChess.Model.Player.PlayerIntellegenceNames.Human">
+        <member name="M:SharpChess.Model.Player.DetermineCheckStatus">
             <summary>
-              Human player.
+            Determine check status.
+            </summary>
+            <returns>
+            Return check status.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Player.GenerateLazyMoves(SharpChess.Model.Moves,SharpChess.Model.Moves.MoveListNames)">
+            <summary>
+            Generate "lazy" moves for all pieces. Lazy means we include moves that put our own king in check.
+            </summary>
+            <param name="moves">
+            Move list to be filled with moves.
+            </param>
+            <param name="movesType">
+            Type of moves to be generated. e.g. all or just captures.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.Player.GenerateLegalMoves(SharpChess.Model.Moves)">
+            <summary>
+            Generate legal moves. i.e. exclude moves that would put own king in check.
+            </summary>
+            <param name="moves">
+            The moves.
+            </param>
+        </member>
+        <member name="M:SharpChess.Model.Player.HasPieceName(SharpChess.Model.Piece.PieceNames)">
+            <summary>
+            Determines of the player has the specified piece.
+            </summary>
+            <param name="piecename">
+            The piecename.
+            </param>
+            <returns>
+            True if player has the piece.
+            </returns>
+        </member>
+        <member name="M:SharpChess.Model.Player.IncreaseMaterialCount">
+            <summary>
+            The increase material count.
             </summary>
         </member>
-        <member name="F:SharpChess.Model.Player.PlayerIntellegenceNames.Computer">
+        <member name="M:SharpChess.Model.Player.IncreasePawnCount">
             <summary>
-              Computer player.
+            The increase pawn count.
             </summary>
         </member>
-        <member name="T:SharpChess.Model.Player.PlayerStatusNames">
+        <member name="M:SharpChess.Model.Player.SetPiecesAtStartingPositions">
             <summary>
-            Player status: in-check, statemate etc...
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Player.PlayerStatusNames.Normal">
-            <summary>
-              Player game in progress.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Player.PlayerStatusNames.InCheck">
-            <summary>
-              Player is in check.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Player.PlayerStatusNames.InStalemate">
-            <summary>
-              Player is in stalemate.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Player.PlayerStatusNames.InCheckMate">
-            <summary>
-              Player is in check mate.
+            The set pieces at starting positions.
             </summary>
         </member>
         <member name="T:SharpChess.Model.PlayerBlack">
@@ -4257,11 +4257,6 @@
         <member name="M:SharpChess.Model.PlayerBlack.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:SharpChess.Model.PlayerBlack"/> class.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.PlayerBlack.SetPiecesAtStartingPositions">
-            <summary>
-            The set pieces at starting positions.
             </summary>
         </member>
         <member name="P:SharpChess.Model.PlayerBlack.PawnAttackLeftOffset">
@@ -4279,6 +4274,11 @@
             Gets PawnForwardOffset.
             </summary>
         </member>
+        <member name="M:SharpChess.Model.PlayerBlack.SetPiecesAtStartingPositions">
+            <summary>
+            The set pieces at starting positions.
+            </summary>
+        </member>
         <member name="T:SharpChess.Model.PlayerClock">
             <summary>
             Player chess clock.
@@ -4287,26 +4287,6 @@
         <member name="M:SharpChess.Model.PlayerClock.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:SharpChess.Model.PlayerClock"/> class.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.PlayerClock.Reset">
-            <summary>
-            The resets the clock back to zero.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.PlayerClock.Revert">
-            <summary>
-            Stop the clock and reset the turn start time.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.PlayerClock.Start">
-            <summary>
-            Start the clock.
-            </summary>
-        </member>
-        <member name="M:SharpChess.Model.PlayerClock.Stop">
-            <summary>
-            Stop the clock.
             </summary>
         </member>
         <member name="P:SharpChess.Model.PlayerClock.ControlPeriod">
@@ -4348,6 +4328,26 @@
         <member name="P:SharpChess.Model.PlayerClock.TurnStartTime">
             <summary>
               Gets the time when the current turn started.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.PlayerClock.Reset">
+            <summary>
+            The resets the clock back to zero.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.PlayerClock.Revert">
+            <summary>
+            Stop the clock and reset the turn start time.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.PlayerClock.Start">
+            <summary>
+            Start the clock.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.PlayerClock.Stop">
+            <summary>
+            Stop the clock.
             </summary>
         </member>
         <member name="T:SharpChess.Model.PlayerDebug">
@@ -4416,11 +4416,6 @@
             Initializes a new instance of the <see cref="T:SharpChess.Model.PlayerWhite"/> class.
             </summary>
         </member>
-        <member name="M:SharpChess.Model.PlayerWhite.SetPiecesAtStartingPositions">
-            <summary>
-            The set pieces at starting positions.
-            </summary>
-        </member>
         <member name="P:SharpChess.Model.PlayerWhite.PawnAttackLeftOffset">
             <summary>
             Gets PawnAttackLeftOffset.
@@ -4434,6 +4429,11 @@
         <member name="P:SharpChess.Model.PlayerWhite.PawnForwardOffset">
             <summary>
             Gets PawnForwardOffset.
+            </summary>
+        </member>
+        <member name="M:SharpChess.Model.PlayerWhite.SetPiecesAtStartingPositions">
+            <summary>
+            The set pieces at starting positions.
             </summary>
         </member>
         <member name="T:SharpChess.Model.Square">
@@ -4473,6 +4473,76 @@
             <param name="ordinal">
             The ordinal index of this square.
             </param>
+        </member>
+        <member name="T:SharpChess.Model.Square.ColourNames">
+            <summary>
+            Possible sqaure colours: black or white.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Square.ColourNames.White">
+            <summary>
+              The white.
+            </summary>
+        </member>
+        <member name="F:SharpChess.Model.Square.ColourNames.Black">
+            <summary>
+              The black.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.Colour">
+            <summary>
+              Gets the colour of this square: black or white!
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.File">
+            <summary>
+              Gets file number for this square.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.FileName">
+            <summary>
+              Gets the file letter for this square.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.HashCodeA">
+            <summary>
+              Gets HashCodeA.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.HashCodeB">
+            <summary>
+              Gets HashCodeB.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.Name">
+            <summary>
+              Gets the display name fo this square.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.Ordinal">
+            <summary>
+              Gets the ordinal index of this square.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.Piece">
+            <summary>
+              Gets or sets Piece.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.Rank">
+            <summary>
+              Gets Rank.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.RankName">
+            <summary>
+              Gets RankName.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Square.Value">
+            <summary>
+              Gets a simple positonal value for this square.
+            </summary>
         </member>
         <member name="M:SharpChess.Model.Square.AttackersMoveList(SharpChess.Model.Moves,SharpChess.Model.Player)">
             <summary>
@@ -4548,76 +4618,6 @@
             List of pieces.
             </returns>
         </member>
-        <member name="P:SharpChess.Model.Square.Colour">
-            <summary>
-              Gets the colour of this square: black or white!
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.File">
-            <summary>
-              Gets file number for this square.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.FileName">
-            <summary>
-              Gets the file letter for this square.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.HashCodeA">
-            <summary>
-              Gets HashCodeA.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.HashCodeB">
-            <summary>
-              Gets HashCodeB.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.Name">
-            <summary>
-              Gets the display name fo this square.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.Ordinal">
-            <summary>
-              Gets the ordinal index of this square.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.Piece">
-            <summary>
-              Gets or sets Piece.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.Rank">
-            <summary>
-              Gets Rank.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.RankName">
-            <summary>
-              Gets RankName.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.Square.Value">
-            <summary>
-              Gets a simple positonal value for this square.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.Square.ColourNames">
-            <summary>
-            Possible sqaure colours: black or white.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Square.ColourNames.White">
-            <summary>
-              The white.
-            </summary>
-        </member>
-        <member name="F:SharpChess.Model.Square.ColourNames.Black">
-            <summary>
-              The black.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.Squares">
             <summary>
             The squares.
@@ -4626,6 +4626,11 @@
         <member name="F:SharpChess.Model.Squares.squareList">
             <summary>
             The m_col squares.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.Squares.Count">
+            <summary>
+            Gets the number of squares in the list.
             </summary>
         </member>
         <member name="M:SharpChess.Model.Squares.Add(SharpChess.Model.Square)">
@@ -4685,15 +4690,58 @@
             The piece to remove.
             </param>
         </member>
-        <member name="P:SharpChess.Model.Squares.Count">
-            <summary>
-            Gets the number of squares in the list.
-            </summary>
-        </member>
         <member name="T:SharpChess.Model.WinBoard">
             <summary>
             Responsible for WinBoard Communication. 
             Chess Engine Communication Protocol (WinBoard) comment taken from: http://www.gnu.org/software/xboard/engine-intf.html
+            </summary>
+        </member>
+        <member name="T:SharpChess.Model.WinBoard.CommunicationEvent">
+            <summary>
+            The delegatetype communication event.
+            </summary>
+            <param name="strMessage">
+            The str message.
+            </param>
+        </member>
+        <member name="T:SharpChess.Model.WinBoard.StandardEvent">
+            <summary>
+            The delegatetype standard event.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.WinBoard.WinBoardInputEvent">
+            <summary>
+              Winboard input event.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.WinBoard.WinBoardOutputEvent">
+            <summary>
+             Winboard output event.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.WinBoard.WinBoardQuitEvent">
+            <summary>
+             Winboard quit event.
+            </summary>
+        </member>
+        <member name="E:SharpChess.Model.WinBoard.WinBoardTimeUpdatedEvent">
+            <summary>
+             Winboard time updated event.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.WinBoard.Active">
+            <summary>
+              Gets a value indicating whether Winboard is Active.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.WinBoard.ShowGui">
+            <summary>
+              Gets a value indicating whether to show the Winboard message GUI.
+            </summary>
+        </member>
+        <member name="P:SharpChess.Model.WinBoard.ThreadListener">
+            <summary>
+              Gets or sets the thread that this Winboard class run in.
             </summary>
         </member>
         <member name="M:SharpChess.Model.WinBoard.QueryAndSetWinboardActiveStatus">
@@ -4837,54 +4885,6 @@
             <param name="strLevel">
             Winboard level parameters.
             </param>
-        </member>
-        <member name="E:SharpChess.Model.WinBoard.WinBoardInputEvent">
-            <summary>
-              Winboard input event.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.WinBoard.WinBoardOutputEvent">
-            <summary>
-             Winboard output event.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.WinBoard.WinBoardQuitEvent">
-            <summary>
-             Winboard quit event.
-            </summary>
-        </member>
-        <member name="E:SharpChess.Model.WinBoard.WinBoardTimeUpdatedEvent">
-            <summary>
-             Winboard time updated event.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.WinBoard.Active">
-            <summary>
-              Gets a value indicating whether Winboard is Active.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.WinBoard.ShowGui">
-            <summary>
-              Gets a value indicating whether to show the Winboard message GUI.
-            </summary>
-        </member>
-        <member name="P:SharpChess.Model.WinBoard.ThreadListener">
-            <summary>
-              Gets or sets the thread that this Winboard class run in.
-            </summary>
-        </member>
-        <member name="T:SharpChess.Model.WinBoard.CommunicationEvent">
-            <summary>
-            The delegatetype communication event.
-            </summary>
-            <param name="strMessage">
-            The str message.
-            </param>
-        </member>
-        <member name="T:SharpChess.Model.WinBoard.StandardEvent">
-            <summary>
-            The delegatetype standard event.
-            </summary>
         </member>
         <member name="T:SharpChess.Model.WinBoard.WinBoardInputException">
             <summary>

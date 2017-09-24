@@ -61,12 +61,6 @@
   <ItemGroup>
     <Shadow Include="Test References\SharpChess.Model.accessor" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SharpChess.Model\SharpChess.Model.csproj">
-      <Project>{EE301A37-33A9-4B7A-BE08-D001057610CD}</Project>
-      <Name>SharpChess.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

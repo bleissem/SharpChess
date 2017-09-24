@@ -1132,9 +1132,9 @@ namespace SharpChess
             // 
             // sbr
             // 
-            this.sbr.Location = new System.Drawing.Point(0, 523);
+            this.sbr.Location = new System.Drawing.Point(0, 515);
             this.sbr.Name = "sbr";
-            this.sbr.Size = new System.Drawing.Size(690, 16);
+            this.sbr.Size = new System.Drawing.Size(690, 24);
             this.sbr.SizingGrip = false;
             this.sbr.TabIndex = 7;
             // 
@@ -1416,7 +1416,7 @@ namespace SharpChess
             this.tbr.Location = new System.Drawing.Point(0, 0);
             this.tbr.Name = "tbr";
             this.tbr.ShowToolTips = true;
-            this.tbr.Size = new System.Drawing.Size(690, 28);
+            this.tbr.Size = new System.Drawing.Size(690, 32);
             this.tbr.TabIndex = 32;
             this.tbr.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
             this.tbr.Wrappable = false;
@@ -1583,14 +1583,14 @@ namespace SharpChess
             this.pnlMain.Controls.Add(this.pbr);
             this.pnlMain.Controls.Add(this.lblStage);
             this.pnlMain.Controls.Add(this.pnlEdging);
-            this.pnlMain.Location = new System.Drawing.Point(0, 26);
+            this.pnlMain.Location = new System.Drawing.Point(0, 38);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(690, 496);
+            this.pnlMain.Size = new System.Drawing.Size(1104, 725);
             this.pnlMain.TabIndex = 33;
             // 
             // numPerftDepth
             // 
-            this.numPerftDepth.Location = new System.Drawing.Point(64, 416);
+            this.numPerftDepth.Location = new System.Drawing.Point(102, 608);
             this.numPerftDepth.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1602,7 +1602,7 @@ namespace SharpChess
             0,
             0});
             this.numPerftDepth.Name = "numPerftDepth";
-            this.numPerftDepth.Size = new System.Drawing.Size(40, 20);
+            this.numPerftDepth.Size = new System.Drawing.Size(64, 26);
             this.numPerftDepth.TabIndex = 143;
             this.numPerftDepth.Value = new decimal(new int[] {
             1,
@@ -1613,9 +1613,9 @@ namespace SharpChess
             // 
             // btnPerft
             // 
-            this.btnPerft.Location = new System.Drawing.Point(104, 416);
+            this.btnPerft.Location = new System.Drawing.Point(166, 608);
             this.btnPerft.Name = "btnPerft";
-            this.btnPerft.Size = new System.Drawing.Size(75, 23);
+            this.btnPerft.Size = new System.Drawing.Size(120, 34);
             this.btnPerft.TabIndex = 142;
             this.btnPerft.Text = "Perft";
             this.btnPerft.Visible = false;
@@ -1624,9 +1624,9 @@ namespace SharpChess
             // lblGamePaused
             // 
             this.lblGamePaused.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGamePaused.Location = new System.Drawing.Point(40, 168);
+            this.lblGamePaused.Location = new System.Drawing.Point(64, 246);
             this.lblGamePaused.Name = "lblGamePaused";
-            this.lblGamePaused.Size = new System.Drawing.Size(320, 24);
+            this.lblGamePaused.Size = new System.Drawing.Size(512, 35);
             this.lblGamePaused.TabIndex = 141;
             this.lblGamePaused.Text = "Game Paused";
             this.lblGamePaused.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1634,9 +1634,9 @@ namespace SharpChess
             // 
             // btnPrune
             // 
-            this.btnPrune.Location = new System.Drawing.Point(200, 416);
+            this.btnPrune.Location = new System.Drawing.Point(320, 608);
             this.btnPrune.Name = "btnPrune";
-            this.btnPrune.Size = new System.Drawing.Size(75, 23);
+            this.btnPrune.Size = new System.Drawing.Size(120, 34);
             this.btnPrune.TabIndex = 140;
             this.btnPrune.Text = "Prune";
             this.btnPrune.Visible = false;
@@ -1644,10 +1644,10 @@ namespace SharpChess
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(280, 416);
+            this.txtOutput.Location = new System.Drawing.Point(448, 608);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(120, 40);
+            this.txtOutput.Size = new System.Drawing.Size(192, 58);
             this.txtOutput.TabIndex = 139;
             this.txtOutput.Visible = false;
             // 
@@ -1658,9 +1658,9 @@ namespace SharpChess
             this.lvcMoveNo,
             this.lvcTime,
             this.lvcMove});
-            this.lvwMoveHistory.Location = new System.Drawing.Point(400, 176);
+            this.lvwMoveHistory.Location = new System.Drawing.Point(640, 257);
             this.lvwMoveHistory.Name = "lvwMoveHistory";
-            this.lvwMoveHistory.Size = new System.Drawing.Size(248, 128);
+            this.lvwMoveHistory.Size = new System.Drawing.Size(397, 187);
             this.lvwMoveHistory.TabIndex = 39;
             this.lvwMoveHistory.UseCompatibleStateImageBehavior = false;
             this.lvwMoveHistory.View = System.Windows.Forms.View.Details;
@@ -1682,9 +1682,9 @@ namespace SharpChess
             // 
             // btnXMLtoOB
             // 
-            this.btnXMLtoOB.Location = new System.Drawing.Point(496, 416);
+            this.btnXMLtoOB.Location = new System.Drawing.Point(794, 608);
             this.btnXMLtoOB.Name = "btnXMLtoOB";
-            this.btnXMLtoOB.Size = new System.Drawing.Size(75, 23);
+            this.btnXMLtoOB.Size = new System.Drawing.Size(120, 34);
             this.btnXMLtoOB.TabIndex = 138;
             this.btnXMLtoOB.Text = "XML to OB";
             this.btnXMLtoOB.Visible = false;
@@ -1692,9 +1692,9 @@ namespace SharpChess
             // 
             // btnPGNtoXML
             // 
-            this.btnPGNtoXML.Location = new System.Drawing.Point(408, 416);
+            this.btnPGNtoXML.Location = new System.Drawing.Point(653, 608);
             this.btnPGNtoXML.Name = "btnPGNtoXML";
-            this.btnPGNtoXML.Size = new System.Drawing.Size(75, 23);
+            this.btnPGNtoXML.Size = new System.Drawing.Size(120, 34);
             this.btnPGNtoXML.TabIndex = 137;
             this.btnPGNtoXML.Text = "PGN to XML";
             this.btnPGNtoXML.Visible = false;
@@ -1703,9 +1703,9 @@ namespace SharpChess
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(552, 8);
+            this.label5.Location = new System.Drawing.Point(883, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 23);
+            this.label5.Size = new System.Drawing.Size(154, 33);
             this.label5.TabIndex = 136;
             this.label5.Text = "Black";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1713,9 +1713,9 @@ namespace SharpChess
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(448, 8);
+            this.label3.Location = new System.Drawing.Point(717, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 23);
+            this.label3.Size = new System.Drawing.Size(153, 33);
             this.label3.TabIndex = 135;
             this.label3.Text = "White";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1726,10 +1726,10 @@ namespace SharpChess
             this.lblBlacksCaptures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBlacksCaptures.CausesValidation = false;
             this.lblBlacksCaptures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlacksCaptures.Location = new System.Drawing.Point(644, 428);
+            this.lblBlacksCaptures.Location = new System.Drawing.Point(1030, 626);
             this.lblBlacksCaptures.Name = "lblBlacksCaptures";
             this.lblBlacksCaptures.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBlacksCaptures.Size = new System.Drawing.Size(42, 42);
+            this.lblBlacksCaptures.Size = new System.Drawing.Size(68, 61);
             this.lblBlacksCaptures.TabIndex = 134;
             this.lblBlacksCaptures.Text = "0";
             this.lblBlacksCaptures.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1740,10 +1740,10 @@ namespace SharpChess
             this.lblWhitesCaptures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWhitesCaptures.CausesValidation = false;
             this.lblWhitesCaptures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWhitesCaptures.Location = new System.Drawing.Point(644, 384);
+            this.lblWhitesCaptures.Location = new System.Drawing.Point(1030, 561);
             this.lblWhitesCaptures.Name = "lblWhitesCaptures";
             this.lblWhitesCaptures.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblWhitesCaptures.Size = new System.Drawing.Size(42, 42);
+            this.lblWhitesCaptures.Size = new System.Drawing.Size(68, 62);
             this.lblWhitesCaptures.TabIndex = 133;
             this.lblWhitesCaptures.Text = "0";
             this.lblWhitesCaptures.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1751,9 +1751,9 @@ namespace SharpChess
             // lblPlayer
             // 
             this.lblPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayer.Location = new System.Drawing.Point(392, 32);
+            this.lblPlayer.Location = new System.Drawing.Point(627, 47);
             this.lblPlayer.Name = "lblPlayer";
-            this.lblPlayer.Size = new System.Drawing.Size(48, 24);
+            this.lblPlayer.Size = new System.Drawing.Size(77, 35);
             this.lblPlayer.TabIndex = 131;
             this.lblPlayer.Text = "Player";
             this.lblPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1763,10 +1763,10 @@ namespace SharpChess
             this.lblBlackClock.BackColor = System.Drawing.Color.Transparent;
             this.lblBlackClock.CausesValidation = false;
             this.lblBlackClock.ForeColor = System.Drawing.Color.Black;
-            this.lblBlackClock.Location = new System.Drawing.Point(552, 64);
+            this.lblBlackClock.Location = new System.Drawing.Point(883, 94);
             this.lblBlackClock.Name = "lblBlackClock";
             this.lblBlackClock.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBlackClock.Size = new System.Drawing.Size(96, 23);
+            this.lblBlackClock.Size = new System.Drawing.Size(154, 33);
             this.lblBlackClock.TabIndex = 130;
             this.lblBlackClock.Text = ":";
             this.lblBlackClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1776,10 +1776,10 @@ namespace SharpChess
             this.lblBlackPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblBlackPosition.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBlackPosition.CausesValidation = false;
-            this.lblBlackPosition.Location = new System.Drawing.Point(552, 144);
+            this.lblBlackPosition.Location = new System.Drawing.Point(883, 210);
             this.lblBlackPosition.Name = "lblBlackPosition";
             this.lblBlackPosition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBlackPosition.Size = new System.Drawing.Size(96, 23);
+            this.lblBlackPosition.Size = new System.Drawing.Size(154, 34);
             this.lblBlackPosition.TabIndex = 128;
             this.lblBlackPosition.Text = "0";
             this.lblBlackPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1789,10 +1789,10 @@ namespace SharpChess
             this.lblBlackScore.BackColor = System.Drawing.Color.Transparent;
             this.lblBlackScore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBlackScore.CausesValidation = false;
-            this.lblBlackScore.Location = new System.Drawing.Point(552, 96);
+            this.lblBlackScore.Location = new System.Drawing.Point(883, 140);
             this.lblBlackScore.Name = "lblBlackScore";
             this.lblBlackScore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBlackScore.Size = new System.Drawing.Size(96, 23);
+            this.lblBlackScore.Size = new System.Drawing.Size(154, 34);
             this.lblBlackScore.TabIndex = 127;
             this.lblBlackScore.Text = "0";
             this.lblBlackScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1803,9 +1803,9 @@ namespace SharpChess
             this.cboIntellegenceBlack.Items.AddRange(new object[] {
             "Human",
             "Computer"});
-            this.cboIntellegenceBlack.Location = new System.Drawing.Point(552, 32);
+            this.cboIntellegenceBlack.Location = new System.Drawing.Point(883, 47);
             this.cboIntellegenceBlack.Name = "cboIntellegenceBlack";
-            this.cboIntellegenceBlack.Size = new System.Drawing.Size(96, 21);
+            this.cboIntellegenceBlack.Size = new System.Drawing.Size(154, 28);
             this.cboIntellegenceBlack.TabIndex = 126;
             this.cboIntellegenceBlack.SelectedIndexChanged += new System.EventHandler(this.cboIntellegenceBlack_SelectedIndexChanged);
             // 
@@ -1814,10 +1814,10 @@ namespace SharpChess
             this.lblBlackPoints.BackColor = System.Drawing.Color.Transparent;
             this.lblBlackPoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBlackPoints.CausesValidation = false;
-            this.lblBlackPoints.Location = new System.Drawing.Point(552, 120);
+            this.lblBlackPoints.Location = new System.Drawing.Point(883, 175);
             this.lblBlackPoints.Name = "lblBlackPoints";
             this.lblBlackPoints.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBlackPoints.Size = new System.Drawing.Size(96, 23);
+            this.lblBlackPoints.Size = new System.Drawing.Size(154, 34);
             this.lblBlackPoints.TabIndex = 125;
             this.lblBlackPoints.Text = "0";
             this.lblBlackPoints.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1827,10 +1827,10 @@ namespace SharpChess
             this.lblWhiteClock.BackColor = System.Drawing.Color.Transparent;
             this.lblWhiteClock.CausesValidation = false;
             this.lblWhiteClock.ForeColor = System.Drawing.Color.Black;
-            this.lblWhiteClock.Location = new System.Drawing.Point(448, 64);
+            this.lblWhiteClock.Location = new System.Drawing.Point(717, 94);
             this.lblWhiteClock.Name = "lblWhiteClock";
             this.lblWhiteClock.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblWhiteClock.Size = new System.Drawing.Size(96, 23);
+            this.lblWhiteClock.Size = new System.Drawing.Size(153, 33);
             this.lblWhiteClock.TabIndex = 124;
             this.lblWhiteClock.Text = ":";
             this.lblWhiteClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1840,10 +1840,10 @@ namespace SharpChess
             this.lblWhitePosition.BackColor = System.Drawing.Color.Transparent;
             this.lblWhitePosition.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWhitePosition.CausesValidation = false;
-            this.lblWhitePosition.Location = new System.Drawing.Point(448, 144);
+            this.lblWhitePosition.Location = new System.Drawing.Point(717, 210);
             this.lblWhitePosition.Name = "lblWhitePosition";
             this.lblWhitePosition.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblWhitePosition.Size = new System.Drawing.Size(96, 23);
+            this.lblWhitePosition.Size = new System.Drawing.Size(153, 34);
             this.lblWhitePosition.TabIndex = 122;
             this.lblWhitePosition.Text = "0";
             this.lblWhitePosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1853,10 +1853,10 @@ namespace SharpChess
             this.lblWhiteScore.BackColor = System.Drawing.Color.Transparent;
             this.lblWhiteScore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWhiteScore.CausesValidation = false;
-            this.lblWhiteScore.Location = new System.Drawing.Point(448, 96);
+            this.lblWhiteScore.Location = new System.Drawing.Point(717, 140);
             this.lblWhiteScore.Name = "lblWhiteScore";
             this.lblWhiteScore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblWhiteScore.Size = new System.Drawing.Size(96, 23);
+            this.lblWhiteScore.Size = new System.Drawing.Size(153, 34);
             this.lblWhiteScore.TabIndex = 121;
             this.lblWhiteScore.Text = "0";
             this.lblWhiteScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1867,9 +1867,9 @@ namespace SharpChess
             this.cboIntellegenceWhite.Items.AddRange(new object[] {
             "Human",
             "Computer"});
-            this.cboIntellegenceWhite.Location = new System.Drawing.Point(448, 32);
+            this.cboIntellegenceWhite.Location = new System.Drawing.Point(717, 47);
             this.cboIntellegenceWhite.Name = "cboIntellegenceWhite";
-            this.cboIntellegenceWhite.Size = new System.Drawing.Size(96, 21);
+            this.cboIntellegenceWhite.Size = new System.Drawing.Size(153, 28);
             this.cboIntellegenceWhite.TabIndex = 120;
             this.cboIntellegenceWhite.SelectedIndexChanged += new System.EventHandler(this.cboIntellegenceWhite_SelectedIndexChanged);
             // 
@@ -1878,10 +1878,10 @@ namespace SharpChess
             this.lblWhitePoints.BackColor = System.Drawing.Color.Transparent;
             this.lblWhitePoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWhitePoints.CausesValidation = false;
-            this.lblWhitePoints.Location = new System.Drawing.Point(448, 120);
+            this.lblWhitePoints.Location = new System.Drawing.Point(717, 175);
             this.lblWhitePoints.Name = "lblWhitePoints";
             this.lblWhitePoints.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblWhitePoints.Size = new System.Drawing.Size(96, 23);
+            this.lblWhitePoints.Size = new System.Drawing.Size(153, 34);
             this.lblWhitePoints.TabIndex = 119;
             this.lblWhitePoints.Text = "0";
             this.lblWhitePoints.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1889,9 +1889,9 @@ namespace SharpChess
             // lblPlayerClocks
             // 
             this.lblPlayerClocks.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayerClocks.Location = new System.Drawing.Point(392, 64);
+            this.lblPlayerClocks.Location = new System.Drawing.Point(627, 94);
             this.lblPlayerClocks.Name = "lblPlayerClocks";
-            this.lblPlayerClocks.Size = new System.Drawing.Size(48, 24);
+            this.lblPlayerClocks.Size = new System.Drawing.Size(77, 35);
             this.lblPlayerClocks.TabIndex = 118;
             this.lblPlayerClocks.Text = "Clock";
             this.lblPlayerClocks.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1899,9 +1899,9 @@ namespace SharpChess
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(392, 144);
+            this.label2.Location = new System.Drawing.Point(627, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 24);
+            this.label2.Size = new System.Drawing.Size(77, 36);
             this.label2.TabIndex = 116;
             this.label2.Text = "Position";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1909,9 +1909,9 @@ namespace SharpChess
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(400, 96);
+            this.label4.Location = new System.Drawing.Point(640, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 24);
+            this.label4.Size = new System.Drawing.Size(64, 35);
             this.label4.TabIndex = 115;
             this.label4.Text = "Score";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1919,9 +1919,9 @@ namespace SharpChess
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(400, 120);
+            this.label1.Location = new System.Drawing.Point(640, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 24);
+            this.label1.Size = new System.Drawing.Size(64, 35);
             this.label1.TabIndex = 114;
             this.label1.Text = "Points";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1931,9 +1931,9 @@ namespace SharpChess
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(32, 350);
+            this.panel1.Location = new System.Drawing.Point(51, 512);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(342, 8);
+            this.panel1.Size = new System.Drawing.Size(547, 11);
             this.panel1.TabIndex = 55;
             // 
             // panel3
@@ -1941,9 +1941,9 @@ namespace SharpChess
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(366, 6);
+            this.panel3.Location = new System.Drawing.Point(586, 9);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(8, 352);
+            this.panel3.Size = new System.Drawing.Size(12, 514);
             this.panel3.TabIndex = 57;
             // 
             // panel4
@@ -1951,9 +1951,9 @@ namespace SharpChess
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(24, 6);
+            this.panel4.Location = new System.Drawing.Point(38, 9);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(342, 8);
+            this.panel4.Size = new System.Drawing.Size(548, 11);
             this.panel4.TabIndex = 58;
             // 
             // panel2
@@ -1961,16 +1961,16 @@ namespace SharpChess
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(24, 8);
+            this.panel2.Location = new System.Drawing.Point(38, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(8, 350);
+            this.panel2.Size = new System.Drawing.Size(13, 511);
             this.panel2.TabIndex = 56;
             // 
             // pbr
             // 
-            this.pbr.Location = new System.Drawing.Point(0, 472);
+            this.pbr.Location = new System.Drawing.Point(0, 690);
             this.pbr.Name = "pbr";
-            this.pbr.Size = new System.Drawing.Size(688, 23);
+            this.pbr.Size = new System.Drawing.Size(1101, 33);
             this.pbr.TabIndex = 54;
             // 
             // lblStage
@@ -1978,10 +1978,10 @@ namespace SharpChess
             this.lblStage.BackColor = System.Drawing.Color.Transparent;
             this.lblStage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblStage.CausesValidation = false;
-            this.lblStage.Location = new System.Drawing.Point(376, 358);
+            this.lblStage.Location = new System.Drawing.Point(602, 523);
             this.lblStage.Name = "lblStage";
             this.lblStage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStage.Size = new System.Drawing.Size(312, 23);
+            this.lblStage.Size = new System.Drawing.Size(499, 34);
             this.lblStage.TabIndex = 50;
             this.lblStage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1989,17 +1989,17 @@ namespace SharpChess
             // 
             this.pnlEdging.BackColor = System.Drawing.SystemColors.Control;
             this.pnlEdging.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlEdging.Location = new System.Drawing.Point(28, 12);
+            this.pnlEdging.Location = new System.Drawing.Point(45, 18);
             this.pnlEdging.Name = "pnlEdging";
-            this.pnlEdging.Size = new System.Drawing.Size(340, 340);
+            this.pnlEdging.Size = new System.Drawing.Size(544, 496);
             this.pnlEdging.TabIndex = 35;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Location = new System.Drawing.Point(0, 21);
+            this.groupBox1.Location = new System.Drawing.Point(0, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 8);
+            this.groupBox1.Size = new System.Drawing.Size(1280, 11);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             // 
@@ -2023,7 +2023,7 @@ namespace SharpChess
             // 
             // frmMain
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(8, 19);
             this.ClientSize = new System.Drawing.Size(690, 539);
             this.Controls.Add(this.tbr);
             this.Controls.Add(this.groupBox1);

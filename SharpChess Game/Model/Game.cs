@@ -86,7 +86,7 @@ namespace SharpChess.Model
 
             PlayerWhite.Brain.ReadyToMakeMoveEvent += PlayerReadyToMakeMove;
             PlayerBlack.Brain.ReadyToMakeMoveEvent += PlayerReadyToMakeMove;
-
+            /*
             RegistryKey registryKeySoftware = Registry.CurrentUser.OpenSubKey("Software", true);
             if (registryKeySoftware != null)
             {
@@ -134,7 +134,7 @@ namespace SharpChess.Model
                     }
                 }
             }
-
+            */
             // OpeningBook.BookConvert(Game.PlayerWhite);
         }
 
@@ -723,7 +723,7 @@ namespace SharpChess.Model
             SuspendPondering();
             PlayerWhite.Brain.AbortThinking();
             PlayerBlack.Brain.AbortThinking();
-
+            /*
             RegistryKey registryKeySoftware = Registry.CurrentUser.OpenSubKey("Software", true);
             if (registryKeySoftware != null)
             {
@@ -735,6 +735,7 @@ namespace SharpChess.Model
                     registryKeySharpChess.SetValue("ShowThinking", ShowThinking ? "1" : "0");
                 }
             }
+            */
         }
 
         /// <summary>

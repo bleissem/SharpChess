@@ -109,9 +109,10 @@ namespace SharpChess.Model.AI
         /// <returns>
         /// Returns whether the player in check.
         /// </returns>
-        public static unsafe bool QueryandCachePlayerInCheckStatusForPosition(ulong hashCodeA, ulong hashCodeB, Player player)
+        public static bool QueryandCachePlayerInCheckStatusForPosition(ulong hashCodeA, ulong hashCodeB, Player player)
         {
-            fixed (HashEntry* phashBase = &hashTableEntries[0])
+            uint phashBase = 0;
+            //fixed (HashEntry* phashBase = &hashTableEntries[0])
             {
                 if (player.Colour == Player.PlayerColourNames.Black)
                 {
@@ -126,19 +127,20 @@ namespace SharpChess.Model.AI
 
                 Probes++;
 
-                HashEntry* phashEntry = phashBase;
+                uint phashEntry = phashBase;
+                // HashEntry* phashEntry = phashBase;
                 phashEntry += (uint)(hashCodeA % hashTableSize);
 
-                if (phashEntry->HashCodeA != hashCodeA || phashEntry->HashCodeB != hashCodeB)
+                if (hashTableEntries[phashEntry].HashCodeA != hashCodeA || hashTableEntries[phashEntry].HashCodeB != hashCodeB)
                 {
-                    if (phashEntry->HashCodeA != 0)
+                    if (hashTableEntries[phashEntry].HashCodeA != 0)
                     {
                         Overwrites++;
                     }
 
-                    phashEntry->HashCodeA = hashCodeA;
-                    phashEntry->HashCodeB = hashCodeB;
-                    phashEntry->IsInCheck = player.DetermineCheckStatus();
+                    hashTableEntries[phashEntry].HashCodeA = hashCodeA;
+                    hashTableEntries[phashEntry].HashCodeB = hashCodeB;
+                    hashTableEntries[phashEntry].IsInCheck = player.DetermineCheckStatus();
                     Writes++;
                 }
                 else
@@ -146,7 +148,7 @@ namespace SharpChess.Model.AI
                     Hits++;
                 }
 
-                return phashEntry->IsInCheck;
+                return hashTableEntries[phashEntry].IsInCheck;
             }
         }
 
